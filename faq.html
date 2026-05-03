@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>FAQ: The Mood & Mind Centre</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
+  <style>
+    .page-hero { padding: 120px 60px 80px; background: var(--deep); }
+    .page-hero .section-label { color: var(--sage-mid); margin-bottom: 16px; }
+    .page-hero h1 { color: white; margin-bottom: 20px; font-size: clamp(2.4rem,5vw,4rem); }
+    .page-hero p { color: rgba(255,255,255,0.75); max-width: 600px; font-size: 18px; line-height: 1.7; }
+    .page-body-inner { max-width: 860px; margin: 0 auto; padding: 80px 40px; }
+    .faq-group { margin-bottom: 56px; }
+    .faq-group h2 { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--deep); margin-bottom: 24px; padding-bottom: 12px; border-bottom: 2px solid var(--sage-light); }
+    details { border-bottom: 1px solid rgba(44,62,53,0.1); }
+    details summary { display: flex; justify-content: space-between; align-items: center; padding: 20px 4px; font-weight: 500; color: var(--deep); cursor: pointer; font-size: 16px; list-style: none; gap: 16px; }
+    details summary::-webkit-details-marker { display: none; }
+    details summary::after { content: '+'; font-size: 22px; color: var(--sage); flex-shrink: 0; transition: transform 0.2s; font-weight: 300; }
+    details[open] summary::after { transform: rotate(45deg); }
+    details .answer { padding: 0 4px 20px; color: var(--muted); line-height: 1.8; }
+    details .answer p { margin-bottom: 12px; }
+    details .answer p:last-child { margin-bottom: 0; }
+    details .answer ul { padding-left: 20px; }
+    details .answer ul li { margin-bottom: 6px; }
+    .cta-box { background: var(--deep); border-radius: 20px; padding: 48px; text-align: center; margin-top: 64px; }
+    .cta-box h3 { font-family: 'Playfair Display', serif; color: white; font-size: 1.8rem; margin-bottom: 12px; }
+    .cta-box p { color: rgba(255,255,255,0.7); margin-bottom: 28px; }
+    @media (max-width: 900px) {
+      .page-hero { padding: 100px 24px 60px; }
+      .page-body-inner { padding: 60px 24px; }
+    }
+  
+  /* Scroll-to-top bubble */
+  .scroll-top-btn {
+    position: fixed; bottom: 32px; right: 32px; z-index: 999;
+    width: 48px; height: 48px; border-radius: 50%;
+    background: var(--sage); color: white;
+    border: none; font-size: 20px; cursor: pointer;
+    box-shadow: 0 4px 20px rgba(44,62,53,0.25);
+    display: flex; align-items: center; justify-content: center;
+    opacity: 0; pointer-events: none;
+    transition: opacity 0.3s, transform 0.3s;
+    font-family: var(--sans);
+  }
+  .scroll-top-btn.visible { opacity: 1; pointer-events: auto; }
+  .scroll-top-btn:hover { background: var(--deep); transform: translateY(-3px); }
+
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html" class="nav-logo">The Mood & <span>Mind</span> Centre</a>
+    <ul class="nav-links">
+      <li><a href="index.html#services">Services</a></li>
+      <li><a href="index.html#team">Our Team</a></li>
+      <li><a href="join-our-team.html">Join Our Team</a></li>
+      <li><a href="fees.html">Fees</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="index.html#blog">Blog</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <a href="https://clientportal.zandahealth.com/clientportal/hzyb6/home" target="_blank" rel="noopener" class="nav-cta">Book a Session</a>
+  </nav>
+
+  <div class="page-hero">
+    <div class="section-label">Frequently Asked Questions</div>
+    <h1>Your questions, <em>answered</em></h1>
+    <p>Everything you need to know before your first appointment: from referrals and rebates to what to expect in a session.</p>
+  </div>
+
+  <div style="background: var(--cream);">
+  <div class="page-body-inner">
+
+    <div class="faq-group">
+      <h2>Getting Started</h2>
+
+      <details>
+        <summary>Do I need a referral to see a psychologist?</summary>
+        <div class="answer">
+          <p>No: you can see a psychologist without a referral. However, to access Medicare rebates, you will need a <strong>Mental Health Care Plan (MHCP)</strong> from your GP, which includes a referral to a psychologist. We recommend booking a longer GP appointment (at least 20 minutes) specifically to discuss a Mental Health Care Plan.</p>
+          <p>If you are funded through NDIS, Workcover, or another scheme, different referral pathways apply: contact our reception team and we can guide you through the process.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>What is a Mental Health Care Plan (MHCP)?</summary>
+        <div class="answer">
+          <p>A Mental Health Care Plan is a plan prepared by your GP that entitles you to Medicare rebates for up to <strong>10 individual psychology sessions per calendar year</strong>. After your first 6 sessions, you will need to return to your GP for a review before accessing the remaining 4 sessions.</p>
+          <p>To get an MHCP, book a standard or long appointment with your GP and tell them you'd like to discuss your mental health and get a referral to a psychologist.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>How do I book an appointment?</summary>
+        <div class="answer">
+          <p>You can book in two ways:</p>
+          <ul>
+            <li><strong>Online:</strong> Use our booking portal at any time: available 24/7</li>
+            <li><strong>Phone:</strong> Call us on <strong>07 5573 2200</strong> during business hours and our reception team will assist you</li>
+          </ul>
+          <p>When booking, let us know your preferred location (Hope Island or Upper Coomera), whether you'd like Telehealth, and your reason for seeking support so we can match you with the right psychologist.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>How long will I need to wait for an appointment?</summary>
+        <div class="answer">
+          <p>Wait times vary depending on the psychologist and your preferred location. We aim to offer an initial appointment within 1–2 weeks for most clients. If you require urgent support, please let our reception team know and we will do our best to accommodate you sooner.</p>
+          <p>Telehealth appointments often have shorter wait times and additional availability in evenings and Saturdays.</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-group">
+      <h2>Sessions &amp; Therapy</h2>
+
+      <details>
+        <summary>How long are sessions?</summary>
+        <div class="answer">
+          <p>Standard individual therapy sessions are <strong>50 minutes</strong>. Assessment appointments are longer and will be discussed with you when you book. Group program sessions are typically 90 minutes.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>What's the difference between a clinical psychologist and a registered psychologist?</summary>
+        <div class="answer">
+          <p><strong>Clinical psychologists</strong> have completed a postgraduate clinical psychology degree (Masters or Doctorate) with supervised placements specifically in clinical settings. They are trained to work with more complex or severe presentations.</p>
+          <p><strong>Registered psychologists</strong> have completed an undergraduate degree plus a supervised internship year. They are highly skilled practitioners who work across a broad range of presentations.</p>
+          <p>The Medicare rebate amount differs between the two: clinical psychologists attract a higher rebate. Our reception team can advise which type of psychologist may best suit your needs.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>What can I expect in my first session?</summary>
+        <div class="answer">
+          <p>Your first session is primarily an assessment and getting-to-know-you conversation. Your psychologist will ask about what brought you in, your background, current difficulties, and what you're hoping to achieve. There is no pressure to share more than you're comfortable with.</p>
+          <p>By the end of the session, you and your psychologist will have a clearer picture of your goals and a plan for how to work toward them together.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>How many sessions will I need?</summary>
+        <div class="answer">
+          <p>This varies greatly depending on your presentation, goals, and progress. Some people find 6–8 sessions sufficient for managing a specific issue. Others benefit from longer-term work over many months. Your psychologist will regularly review your progress with you and adjust the treatment plan as needed.</p>
+          <p>Medicare provides rebates for up to 10 individual sessions per calendar year, which gives a natural checkpoint for reviewing your progress with your GP.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Is everything I share confidential?</summary>
+        <div class="answer">
+          <p>Yes: confidentiality is fundamental to psychological practice. What you share with your psychologist is strictly confidential. There are very limited exceptions required by law:</p>
+          <ul>
+            <li>If there is a serious and imminent risk of harm to yourself or another person</li>
+            <li>If you disclose abuse or neglect of a child</li>
+            <li>If records are subpoenaed by a court</li>
+          </ul>
+          <p>Your psychologist will explain these limits clearly at your first session.</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-group">
+      <h2>Fees &amp; Rebates</h2>
+
+      <details>
+        <summary>Do you bulk bill?</summary>
+        <div class="answer">
+          <p>We do not offer bulk billing. However, we work with Medicare rebates (via a Mental Health Care Plan), NDIS, Workcover, and private health insurance to reduce out-of-pocket costs significantly. See our <a href="fees.html" style="color:var(--sage);">Fees page</a> for full details.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>How do Medicare rebates work?</summary>
+        <div class="answer">
+          <p>With a valid Mental Health Care Plan from your GP, you can claim a Medicare rebate on psychology sessions. The rebate amount depends on your psychologist's registration level:</p>
+          <ul>
+            <li>Clinical Psychologist: ~$137 rebate per session</li>
+            <li>Registered Psychologist: ~$97 rebate per session</li>
+          </ul>
+          <p>We process the rebate at the time of your appointment via EFTPOS: you pay the gap amount only and the rebate goes directly to your nominated bank account.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>What is your cancellation policy?</summary>
+        <div class="answer">
+          <p>We require at least <strong>48 hours notice</strong> to cancel or reschedule. Late cancellations or non-attendance may incur an $80 fee, which is not covered by Medicare or insurance. If you are unwell, please contact us as soon as possible.</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-group">
+      <h2>Telehealth</h2>
+
+      <details>
+        <summary>Is Telehealth as effective as face-to-face therapy?</summary>
+        <div class="answer">
+          <p>Research consistently shows that video-based therapy is equally as effective as in-person therapy for the vast majority of presentations, including anxiety, depression, trauma, and relationship issues. Many clients actually prefer the convenience and comfort of connecting from home.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>What technology do I need for Telehealth?</summary>
+        <div class="answer">
+          <p>You need a device with a camera and microphone (smartphone, tablet, or computer) and a stable internet connection. We use a secure, encrypted video platform: no special software needs to be downloaded. Your psychologist will send you a link prior to your session.</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="cta-box">
+      <h3>Still have questions?</h3>
+      <p>Our friendly reception team is happy to help: give us a call or send an email and we'll get back to you promptly.</p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+        <a href="tel:0755732200" class="btn-primary">📞 07 5573 2200</a>
+        <a href="mailto:reception@moodandmindcentre.com" class="btn-ghost" style="color:white;border-color:rgba(255,255,255,0.3);">✉ Email Us</a>
+      </div>
+    </div>
+
+  </div>
+  </div>
+
+    <footer id="contact">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo"><a href="index.html" style="color:inherit;text-decoration:none;">The Mood & <span>Mind</span> Centre</a></div>
+        <p class="footer-about">A private psychology practice delivering evidence-based care with warmth and expertise. Serving the Gold Coast community across two convenient locations.</p>
+        <div class="footer-contact">
+          <div style="margin-bottom:8px">📞 <a href="tel:0755732200">07 5573 2200</a></div>
+          <div>✉ <a href="mailto:reception@moodandmindcentre.com">reception@moodandmindcentre.com</a></div>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services/individual-therapy.html">Individual Therapy</a></li>
+          <li><a href="services/group-programs.html">Group Programs</a></li>
+          <li><a href="services/telehealth.html">Telehealth</a></li>
+          <li><a href="services/assessments.html">Assessments</a></li>
+          <li><a href="services/child-family.html">Child &amp; Family</a></li>
+          <li><a href="services/couples-counselling.html">Couples Counselling</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Information</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#team">Our Team</a></li>
+          <li><a href="fees.html">Fees &amp; Rebates</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="join-our-team.html">Join Our Team</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="mailto:reception@moodandmindcentre.com">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Locations</h4>
+        <ul>
+          <li>Hope Island: Suite 8/8 Santa Barbara Rd</li>
+          <li>Upper Coomera: Gold Coast QLD</li>
+          <li><a href="services/telehealth.html">Telehealth (Anywhere)</a></li>
+        </ul>
+        <h4 style="margin-top:28px">Follow Us</h4>
+        <ul class="footer-social-list">
+          <li><a href="https://www.facebook.com/moodandmindcentre" target="_blank" rel="noopener" class="footer-social-link"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg> Facebook</a></li>
+          <li><a href="https://www.instagram.com/moodandmindcentre" target="_blank" rel="noopener" class="footer-social-link"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg> Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 The Mood &amp; Mind Centre. All rights reserved.</span>
+      <span class="footer-credit">Hope Island · Upper Coomera · Gold Coast QLD &nbsp;·&nbsp; Made by <a href="https://kwinnovations.com.au" target="_blank" rel="noopener" style="color:var(--sage-mid);">KW | Innovations</a></span>
+    </div>
+  </footer>
+
+  <!-- Scroll to top bubble -->
+  <button class="scroll-top-btn" id="scrollTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">↑</button>
+  <script>
+    window.addEventListener('scroll', function() {
+      document.getElementById('scrollTopBtn').classList.toggle('visible', window.scrollY > 400);
+    });
+  </script>
+</body>
+</html>

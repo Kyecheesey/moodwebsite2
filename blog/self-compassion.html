@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Be kinder to yourself: Renee Gentle: The Mood & Mind Centre</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../styles.css"/>
+  <style>
+    .article-hero { padding: 120px 60px 64px; background: var(--deep); }
+    .article-hero .section-label { color: var(--sage-mid); margin-bottom: 16px; }
+    .article-hero h1 { color: white; font-size: clamp(1.8rem,4vw,3rem); max-width: 800px; line-height: 1.25; margin-bottom: 28px; }
+    .article-hero .author-row { display: flex; align-items: center; gap: 14px; }
+    .author-avatar { width: 48px; height: 48px; border-radius: 50%; background: var(--sage-light); display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0; }
+    .author-info { color: rgba(255,255,255,0.75); font-size: 15px; line-height: 1.5; }
+    .author-info strong { color: white; }
+
+    .article-body-wrap { background: var(--cream); }
+    .article-inner { max-width: 740px; margin: 0 auto; padding: 72px 40px 96px; }
+
+    .article-lede { font-size: 20px; color: var(--deep); line-height: 1.7; margin-bottom: 40px; font-weight: 400; font-style: italic; border-left: 3px solid var(--sage); padding-left: 24px; }
+
+    .article-inner h2 { font-family: 'Playfair Display', serif; color: var(--deep); font-size: 1.5rem; margin: 48px 0 16px; }
+    .article-inner p { color: var(--muted); line-height: 1.85; margin-bottom: 20px; font-size: 16.5px; }
+    .article-inner ul, .article-inner ol { color: var(--muted); line-height: 1.85; margin-bottom: 20px; padding-left: 24px; font-size: 16.5px; }
+    .article-inner li { margin-bottom: 10px; }
+    .article-inner strong { color: var(--deep); }
+
+    .callout-box { background: var(--sage-light); border-radius: 16px; padding: 28px 32px; margin: 40px 0; }
+    .callout-box p { color: var(--deep); margin: 0; font-size: 16px; }
+    .callout-box strong { color: var(--sage); }
+
+    .article-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 48px; }
+    .article-tag { background: white; border: 1.5px solid rgba(44,62,53,0.1); color: var(--muted); border-radius: 50px; padding: 5px 14px; font-size: 13px; }
+
+    .article-cta { background: var(--deep); border-radius: 20px; padding: 44px; text-align: center; margin-top: 64px; }
+    .article-cta h3 { font-family: 'Playfair Display', serif; color: white; font-size: 1.6rem; margin-bottom: 12px; }
+    .article-cta p { color: rgba(255,255,255,0.7); margin-bottom: 28px; }
+
+    .related-section { margin-top: 64px; padding-top: 48px; border-top: 2px solid var(--sage-light); }
+    .related-section h3 { font-family: 'Playfair Display', serif; color: var(--deep); font-size: 1.3rem; margin-bottom: 24px; }
+    .related-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(200px,1fr)); gap: 20px; }
+    .related-card { background: white; border-radius: 12px; padding: 20px; box-shadow: 0 2px 12px rgba(44,62,53,0.06); text-decoration: none; }
+    .related-card .r-tag { font-size: 11px; color: var(--sage); font-weight: 500; margin-bottom: 6px; }
+    .related-card .r-title { font-family: 'Playfair Display', serif; color: var(--deep); font-size: 0.95rem; line-height: 1.4; }
+
+    @media (max-width: 900px) {
+      .article-hero { padding: 100px 24px 48px; }
+      .article-inner { padding: 52px 24px 72px; }
+    }
+  
+  /* Scroll-to-top bubble */
+  .scroll-top-btn {
+    position: fixed; bottom: 32px; right: 32px; z-index: 999;
+    width: 48px; height: 48px; border-radius: 50%;
+    background: var(--sage); color: white;
+    border: none; font-size: 20px; cursor: pointer;
+    box-shadow: 0 4px 20px rgba(44,62,53,0.25);
+    display: flex; align-items: center; justify-content: center;
+    opacity: 0; pointer-events: none;
+    transition: opacity 0.3s, transform 0.3s;
+    font-family: var(--sans);
+  }
+  .scroll-top-btn.visible { opacity: 1; pointer-events: auto; }
+  .scroll-top-btn:hover { background: var(--deep); transform: translateY(-3px); }
+
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="../index.html" class="nav-logo">The Mood & <span>Mind</span> Centre</a>
+    <ul class="nav-links">
+      <li><a href="../index.html#services">Services</a></li>
+      <li><a href="../index.html#team">Our Team</a></li>
+      <li><a href="../join-our-team.html">Join Our Team</a></li>
+      <li><a href="../fees.html">Fees</a></li>
+      <li><a href="../faq.html">FAQ</a></li>
+      <li><a href="../blog.html">Blog</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+    <a href="https://clientportal.zandahealth.com/clientportal/hzyb6/home" target="_blank" rel="noopener" class="nav-cta">Book a Session</a>
+  </nav>
+
+  <div class="article-hero">
+    <div class="section-label"><a href="../blog.html" style="color:var(--sage-mid);text-decoration:none;">Blog</a> · Self-compassion</div>
+    <h1>Be kinder to yourself: but how? Practical ways to build self-compassion</h1>
+    <div class="author-row">
+      <div class="author-avatar">🌸</div>
+      <div class="author-info">
+        <strong>Renee Gentle</strong>: Registered Psychologist<br>
+        The Mood &amp; Mind Centre · 2026 · 6 min read
+      </div>
+    </div>
+  </div>
+
+  <div class="article-body-wrap">
+  <div class="article-inner">
+
+    <p class="article-lede">"Just be kinder to yourself" is advice almost everyone has heard: and almost no one knows how to follow. Here is a practical starting point.</p>
+
+    <p>Self-compassion is one of the most researched concepts in contemporary psychology, and for good reason. Studies consistently show that people with higher self-compassion have lower rates of anxiety and depression, recover from setbacks more quickly, and are actually more motivated to improve: not less, as many people fear.</p>
+
+    <p>And yet, for most of us, the instinct when we make a mistake or fall short of our own standards is to be harsh. To criticise, to replay the moment, to tell ourselves we should have known better. We treat ourselves in ways we would never treat a close friend.</p>
+
+    <h2>What self-compassion actually is</h2>
+    <p>Psychologist Kristin Neff, who has done foundational work in this area, describes self-compassion as having three components:</p>
+    <ul>
+      <li><strong>Self-kindness</strong>: treating yourself with warmth and understanding when you suffer or fail, rather than harsh self-judgment.</li>
+      <li><strong>Common humanity</strong>: recognising that suffering, failure, and imperfection are a shared human experience, not something uniquely wrong with you.</li>
+      <li><strong>Mindfulness</strong>: holding painful feelings in balanced awareness rather than suppressing them or being swept away by them.</li>
+    </ul>
+    <p>Notice what's not on the list: telling yourself you're wonderful, ignoring your mistakes, or lowering your standards. Self-compassion is not the same as self-indulgence, and research suggests people often confuse the two.</p>
+
+    <h2>Why we resist it</h2>
+    <p>Most people who struggle with self-compassion have a voice in their head that says something like: <em>"If I'm too easy on myself, I'll stop trying."</em></p>
+    <p>This is a deeply understandable fear: but the research doesn't support it. In fact, the opposite appears to be true: people who practise self-compassion tend to take more responsibility for their mistakes (not less) because they're not as defensive. When you're not terrified of judgment: even your own: you can look more honestly at what happened and what you want to do differently.</p>
+
+    <div class="callout-box">
+      <p><strong>Try this:</strong> The next time you make a mistake, ask yourself: "What would I say to a close friend who was in exactly this situation?" Then try saying that to yourself. Notice the gap between the two.</p>
+    </div>
+
+    <h2>Three practical places to start</h2>
+
+    <h2>1. Name what you're feeling (without amplifying it)</h2>
+    <p>When something goes wrong, try pausing and naming the emotion before you do anything else. "I'm feeling embarrassed." "I'm disappointed in myself." Naming emotions has been shown in neuroscience research to reduce the intensity of emotional responses: it engages the prefrontal cortex and takes some heat out of the moment.</p>
+    <p>The key word here is <em>noticing</em>, not <em>spiralling</em>. There's a difference between "I'm feeling anxious about this presentation" and "I'm feeling anxious because I always fail and everyone can see how incompetent I am." The first is mindfulness; the second is amplification.</p>
+
+    <h2>2. Find the common humanity</h2>
+    <p>One of the quietest forms of suffering is the belief that we are uniquely flawed: that everyone else is managing what we are struggling with. This is almost always inaccurate, but it's remarkably convincing in the moment.</p>
+    <p>When you notice yourself in this place, it can help to gently remind yourself: <em>This is hard. Other people find this hard too. I am not alone in this.</em> It sounds simple, even platitudinous: but the research on common humanity suggests it's genuinely effective at reducing isolation and shame.</p>
+
+    <h2>3. Write yourself a compassionate letter</h2>
+    <p>This exercise feels awkward to almost everyone the first time. That's usually a sign it's worth doing.</p>
+    <p>Think of something you're being hard on yourself about: a mistake at work, a parenting moment you regret, a relationship difficulty. Then write yourself a letter from the perspective of a compassionate friend who knows you well. Someone who understands the context, who knows your struggles, who genuinely wants good things for you.</p>
+    <p>Read it back to yourself. Notice your reaction.</p>
+
+    <h2>A note on resistance</h2>
+    <p>If you find self-compassion extremely difficult: if self-criticism feels deeply ingrained, or the idea of kindness toward yourself feels almost threatening: you are not unusual. For many people, this pattern has roots in early experiences, and working with a psychologist can be genuinely helpful in understanding and shifting it.</p>
+    <p>Self-compassion is a skill, not a trait. Like any skill, it can be learned and practised. And the evidence suggests it's one of the highest-return investments you can make in your own wellbeing.</p>
+
+    <div class="article-tags">
+      <span class="article-tag">Self-compassion</span>
+      <span class="article-tag">Wellbeing</span>
+      <span class="article-tag">CBT</span>
+      <span class="article-tag">Anxiety</span>
+    </div>
+
+    <div class="article-cta">
+      <h3>Want to explore this further?</h3>
+      <p>Our psychologists work with clients on self-compassion, self-criticism, and related patterns. Book a session to get started.</p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+        <a href="https://clientportal.zandahealth.com/clientportal/hzyb6/home" target="_blank" rel="noopener" class="btn-primary">Book a Session</a>
+        <a href="../blog.html" class="btn-ghost" style="color:white;border-color:rgba(255,255,255,0.3);">More Articles</a>
+      </div>
+    </div>
+
+    <div class="related-section">
+      <h3>You might also like</h3>
+      <div class="related-grid">
+        <a href="anxiety-everyday.html" class="related-card">
+          <div class="r-tag">Anxiety</div>
+          <div class="r-title">When worry becomes your default setting</div>
+        </a>
+        <a href="depression-signs.html" class="related-card">
+          <div class="r-tag">Depression</div>
+          <div class="r-title">It's not just sadness: the lesser-known signs</div>
+        </a>
+        <a href="burnout.html" class="related-card">
+          <div class="r-tag">Wellbeing</div>
+          <div class="r-title">Burnout vs. tiredness: how to tell the difference</div>
+        </a>
+      </div>
+    </div>
+
+  </div>
+  </div>
+
+    <footer id="contact">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo"><a href="../index.html" style="color:inherit;text-decoration:none;">The Mood & <span>Mind</span> Centre</a></div>
+        <p class="footer-about">A private psychology practice delivering evidence-based care with warmth and expertise. Serving the Gold Coast community across two convenient locations.</p>
+        <div class="footer-contact">
+          <div style="margin-bottom:8px">📞 <a href="tel:0755732200">07 5573 2200</a></div>
+          <div>✉ <a href="mailto:reception@moodandmindcentre.com">reception@moodandmindcentre.com</a></div>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="../services/individual-therapy.html">Individual Therapy</a></li>
+          <li><a href="../services/group-programs.html">Group Programs</a></li>
+          <li><a href="../services/telehealth.html">Telehealth</a></li>
+          <li><a href="../services/assessments.html">Assessments</a></li>
+          <li><a href="../services/child-family.html">Child &amp; Family</a></li>
+          <li><a href="../services/couples-counselling.html">Couples Counselling</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Information</h4>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../index.html#team">Our Team</a></li>
+          <li><a href="../fees.html">Fees &amp; Rebates</a></li>
+          <li><a href="../faq.html">FAQ</a></li>
+          <li><a href="../join-our-team.html">Join Our Team</a></li>
+          <li><a href="../blog.html">Blog</a></li>
+          <li><a href="mailto:reception@moodandmindcentre.com">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Locations</h4>
+        <ul>
+          <li>Hope Island: Suite 8/8 Santa Barbara Rd</li>
+          <li>Upper Coomera: Gold Coast QLD</li>
+          <li><a href="../services/telehealth.html">Telehealth (Anywhere)</a></li>
+        </ul>
+        <h4 style="margin-top:28px">Follow Us</h4>
+        <ul class="footer-social-list">
+          <li><a href="https://www.facebook.com/moodandmindcentre" target="_blank" rel="noopener" class="footer-social-link"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg> Facebook</a></li>
+          <li><a href="https://www.instagram.com/moodandmindcentre" target="_blank" rel="noopener" class="footer-social-link"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg> Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 The Mood &amp; Mind Centre. All rights reserved.</span>
+      <span class="footer-credit">Hope Island · Upper Coomera · Gold Coast QLD &nbsp;·&nbsp; Made by <a href="https://kwinnovations.com.au" target="_blank" rel="noopener" style="color:var(--sage-mid);">KW | Innovations</a></span>
+    </div>
+  </footer>
+
+  <!-- Scroll to top bubble -->
+  <button class="scroll-top-btn" id="scrollTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">↑</button>
+  <script>
+    window.addEventListener('scroll', function() {
+      document.getElementById('scrollTopBtn').classList.toggle('visible', window.scrollY > 400);
+    });
+  </script>
+</body>
+</html>

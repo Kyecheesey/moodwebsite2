@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Couples Counselling: The Mood & Mind Centre</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../styles.css"/>
+  <style>
+    .service-hero { padding: 120px 40px 80px; background: var(--deep); }
+    .service-hero .section-label { color: var(--sage-mid); }
+    .service-hero h1 { color: white; margin-bottom: 20px; }
+    .service-hero p { color: rgba(255,255,255,0.78); max-width: 600px; font-size: 18px; line-height: 1.7; }
+    .service-body { max-width: 900px; margin: 0 auto; padding: 80px 40px; }
+    .service-body h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.6rem,3vw,2.4rem); color: var(--deep); margin: 48px 0 16px; }
+    .service-body h2:first-child { margin-top: 0; }
+    .service-body p { color: var(--muted); line-height: 1.8; margin-bottom: 16px; }
+    .service-body ul { padding-left: 20px; }
+    .service-body ul li { color: var(--muted); line-height: 1.8; margin-bottom: 8px; }
+    .service-cta { background: var(--sage-light); border-radius: 24px; padding: 48px; text-align: center; margin-top: 64px; }
+    .service-cta h3 { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--deep); margin-bottom: 12px; }
+    .service-cta p { color: var(--muted); margin-bottom: 28px; }
+    .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; margin: 32px 0; }
+    .info-card { background: var(--cream); border-radius: 16px; padding: 28px; }
+    .info-card h4 { font-family: 'Playfair Display', serif; color: var(--deep); margin-bottom: 8px; }
+    .info-card p { color: var(--muted); font-size: 14px; margin: 0; line-height: 1.6; }
+    .faq { border-top: 1px solid rgba(44,62,53,0.1); padding-top: 16px; margin-top: 16px; }
+    .faq summary { font-weight: 500; color: var(--deep); cursor: pointer; padding: 8px 0; }
+    .faq p { padding: 8px 0 16px; margin: 0; }
+    .highlight-box { background: var(--warm-light); border-radius: 20px; padding: 32px; margin: 32px 0; border-left: 4px solid var(--warm); }
+    .highlight-box p { margin: 0; color: var(--muted); font-size: 15px; line-height: 1.8; }
+    .highlight-box strong { color: var(--deep); }
+  
+  /* Scroll-to-top bubble */
+  .scroll-top-btn {
+    position: fixed; bottom: 32px; right: 32px; z-index: 999;
+    width: 48px; height: 48px; border-radius: 50%;
+    background: var(--sage); color: white;
+    border: none; font-size: 20px; cursor: pointer;
+    box-shadow: 0 4px 20px rgba(44,62,53,0.25);
+    display: flex; align-items: center; justify-content: center;
+    opacity: 0; pointer-events: none;
+    transition: opacity 0.3s, transform 0.3s;
+    font-family: var(--sans);
+  }
+  .scroll-top-btn.visible { opacity: 1; pointer-events: auto; }
+  .scroll-top-btn:hover { background: var(--deep); transform: translateY(-3px); }
+
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="../index.html" class="nav-logo">The Mood & <span>Mind</span> Centre</a>
+    <ul class="nav-links">
+      <li><a href="../index.html#services">Services</a></li>
+      <li><a href="../index.html#team">Our Team</a></li>
+      <li><a href="../index.html#process">How It Works</a></li>
+      <li><a href="../index.html#blog">Resources</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+    <a href="https://clientportal.zandahealth.com/clientportal/hzyb6/home" target="_blank" rel="noopener" class="nav-cta">Book a Session</a>
+  </nav>
+
+  <div class="service-hero">
+    <div class="section-label">Our Services</div>
+    <h1>Couples Counselling</h1>
+    <p>Professional, evidence-based relationship therapy for couples at any stage: whether you are looking to strengthen your bond, navigate a crisis, or find a respectful path forward.</p>
+  </div>
+
+  <div class="service-body">
+
+    <h2>What is Couples Counselling?</h2>
+    <p>Couples counselling is a form of psychological therapy specifically designed for intimate partners. Unlike individual therapy, the relationship itself is the focus of treatment. A skilled couples therapist creates a balanced, neutral space where both partners feel equally heard: and works with the couple to understand the patterns driving conflict, distance, or disconnection.</p>
+    <p>Seeking couples counselling is not a sign of failure. It is an act of investment in one of the most important relationships in your life. Research from the Gottman Institute and other leading bodies shows that couples therapy: when delivered by a trained clinician using evidence-based methods: produces significant improvements in relationship satisfaction, communication, and emotional intimacy for the majority of couples who engage fully in the process.</p>
+    <p>Our psychologists approach couples therapy with warmth, respect, and complete neutrality. Their role is never to take sides or assign blame, but to help you both understand each other more deeply and find new ways of relating.</p>
+
+    <h2>What We Can Help With</h2>
+    <ul>
+      <li><strong>Communication difficulties</strong>: constant misunderstandings, feeling unheard, difficulty expressing needs</li>
+      <li><strong>Frequent conflict and arguing</strong>: recurring arguments that never resolve, escalating fights, criticism and defensiveness</li>
+      <li><strong>Emotional distance and disconnection</strong>: feeling like housemates, growing apart, loss of intimacy and friendship</li>
+      <li><strong>Infidelity and trust repair</strong>: rebuilding trust after an affair or breach of fidelity, whether staying together or separating</li>
+      <li><strong>Intimacy and sexual difficulties</strong>: mismatch in desire, avoidance, or intimacy that has been impacted by life stressors or past experiences</li>
+      <li><strong>Pre-marital counselling</strong>: building a solid foundation before marriage, clarifying values and expectations, and learning relationship skills proactively</li>
+      <li><strong>Parenting disagreements</strong>: different parenting styles, conflict about discipline, or co-parenting after separation</li>
+      <li><strong>Blended family challenges</strong>: navigating the complexities of step-parenting, ex-partner dynamics, and stepfamily relationships</li>
+      <li><strong>Major life transitions</strong>: adjusting to new parenthood, relocation, illness, job loss, or retirement together</li>
+      <li><strong>Separation support</strong>: for couples who have decided to separate but want to do so with respect, communication, and, if relevant, as healthy co-parents</li>
+    </ul>
+
+    <h2>Our Therapeutic Approaches</h2>
+    <p>Our psychologists draw on several evidence-based frameworks for couples work:</p>
+
+    <div class="highlight-box">
+      <p><strong>Gottman Method Couples Therapy</strong>: Developed by Dr John and Dr Julie Gottman from decades of relationship research, this approach builds friendship, shared meaning, and the ability to manage conflict constructively. It is one of the most extensively researched couples therapy models available.</p>
+    </div>
+
+    <div class="highlight-box">
+      <p><strong>Emotionally Focused Therapy (EFT)</strong>: Developed by Dr Sue Johnson, EFT focuses on the emotional bond between partners. It helps couples identify the negative interaction cycles that create distance and distress, and re-establish secure emotional connection. EFT has one of the strongest evidence bases of any couples intervention.</p>
+    </div>
+
+    <div class="highlight-box">
+      <p><strong>Integrative Behavioural Couple Therapy (IBCT)</strong>: Combines strategies to promote positive change with acceptance-based techniques to help partners better tolerate differences. Particularly effective when longstanding patterns are resistant to change.</p>
+    </div>
+
+    <h2>What to Expect</h2>
+    <p>Couples therapy typically begins with a joint intake session where both partners are present and can share their perspectives on the relationship and what they hope to achieve. Your psychologist may also request individual sessions with each partner early in the process: this provides a space to share things that are difficult to say in the joint setting and helps your psychologist understand each person's full experience.</p>
+    <p>Most couples attend sessions fortnightly. Sessions run for 50 minutes. The number of sessions varies: some couples find 6–10 sessions transformative; others engage in longer-term work on deeper patterns. Your psychologist will review progress regularly and discuss the pace and duration of therapy openly.</p>
+    <p>Both partners do not need to be at the same level of commitment when starting. Many couples begin with one partner more reluctant than the other: and this is entirely normal. A skilled therapist works with that ambivalence rather than against it.</p>
+
+    <div class="info-grid">
+      <div class="info-card">
+        <h4>Session Format</h4>
+        <p>Joint sessions with both partners. Individual sessions with each partner may also be included, especially early in therapy.</p>
+      </div>
+      <div class="info-card">
+        <h4>Session Length</h4>
+        <p>50 minutes. Some intensive formats are available for couples who prefer longer sessions or have travelled from outside the Gold Coast.</p>
+      </div>
+      <div class="info-card">
+        <h4>Medicare</h4>
+        <p>Medicare does not rebate standard couples counselling. Individual sessions within a couples therapy framework may be rebatable with a MHCP: ask your psychologist.</p>
+      </div>
+      <div class="info-card">
+        <h4>Locations</h4>
+        <p>Hope Island, Upper Coomera, or via Telehealth. Telehealth couples sessions are effective and convenient: both partners can join from home.</p>
+      </div>
+    </div>
+
+    <h2>Funding & Fees</h2>
+    <p>Couples counselling sessions are billed at the standard psychology session rate. Medicare does not cover joint couples sessions as they fall outside the Medicare-rebatable psychological therapy item numbers. However:</p>
+    <ul>
+      <li><strong>Individual sessions within couples therapy</strong>: where your psychologist meets with each partner individually, these may be rebatable under a valid Mental Health Care Plan. Discuss this with your psychologist.</li>
+      <li><strong>Private Health Insurance</strong>: Some extras policies provide rebates for psychology sessions attended by an individual as part of couples therapy. Check with your health fund.</li>
+      <li><strong>Private (Self-Funded)</strong>: Most couples fund their sessions privately. The investment in your relationship is significant: contact reception for current fees.</li>
+      <li><strong>WorkCover / Compensation</strong>: In some cases, relationship impacts of a compensable injury may be fundable. Contact us to discuss your circumstances.</li>
+    </ul>
+
+    <h2>Frequently Asked Questions</h2>
+
+    <details class="faq">
+      <summary>What if my partner is reluctant to come?</summary>
+      <p>This is one of the most common concerns we hear. You can begin with a session on your own: exploring the relationship dynamics and what you would like to work on. This can sometimes be enough to help your partner feel less apprehensive. Some couples also find it helpful for the reluctant partner to come just once with no commitment to return. Our psychologists are experienced at welcoming ambivalent clients without pressure.</p>
+    </details>
+
+    <details class="faq">
+      <summary>Is couples therapy confidential?</summary>
+      <p>Yes. What is discussed in sessions is confidential within the bounds of standard ethical and legal obligations. If your therapist also conducts individual sessions with each partner, they will clarify at the outset how information from individual sessions is handled in the joint context: typically, individual disclosures are not shared in joint sessions without the person's agreement.</p>
+    </details>
+
+    <details class="faq">
+      <summary>We are already separated. Can couples counselling still help?</summary>
+      <p>Absolutely. Post-separation support is a recognised and valuable form of couples therapy, particularly for couples who share children and need to establish healthy co-parenting. Even couples who have decided to separate benefit from a professional space to process the separation with respect, reduce ongoing conflict, and clarify practical decisions. This is often called discernment counselling or separation support.</p>
+    </details>
+
+    <details class="faq">
+      <summary>Do you see same-sex couples and non-traditional relationship structures?</summary>
+      <p>Yes, fully and without reservation. Our psychologists are affirming of all relationship structures, identities, and orientations. We work with same-sex couples, polyamorous relationships, and all family configurations with the same professional care and respect extended to every couple we see.</p>
+    </details>
+
+    <details class="faq">
+      <summary>What if one partner is experiencing depression or anxiety: should that be treated first?</summary>
+      <p>Not necessarily. Individual mental health concerns and relationship difficulties often interact: each can drive the other, and treating one in isolation may not address the full picture. Our psychologists are trained to work with both simultaneously. In some cases, a combination of individual and couples therapy is recommended. Your psychologist will discuss the most effective approach for your specific situation.</p>
+    </details>
+
+    <div class="service-cta">
+      <h3>Ready to get started?</h3>
+      <p>Book online or call us on 07 5573 2200. Available at Hope Island, Upper Coomera, or via Telehealth.</p>
+      <a href="https://clientportal.zandahealth.com/clientportal/hzyb6/home" target="_blank" class="btn-primary">Book a Session</a>
+    </div>
+
+  </div>
+
+    <footer id="contact">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo"><a href="../index.html" style="color:inherit;text-decoration:none;">The Mood & <span>Mind</span> Centre</a></div>
+        <p class="footer-about">A private psychology practice delivering evidence-based care with warmth and expertise. Serving the Gold Coast community across two convenient locations.</p>
+        <div class="footer-contact">
+          <div style="margin-bottom:8px">📞 <a href="tel:0755732200">07 5573 2200</a></div>
+          <div>✉ <a href="mailto:reception@moodandmindcentre.com">reception@moodandmindcentre.com</a></div>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="../services/individual-therapy.html">Individual Therapy</a></li>
+          <li><a href="../services/group-programs.html">Group Programs</a></li>
+          <li><a href="../services/telehealth.html">Telehealth</a></li>
+          <li><a href="../services/assessments.html">Assessments</a></li>
+          <li><a href="../services/child-family.html">Child &amp; Family</a></li>
+          <li><a href="../services/couples-counselling.html">Couples Counselling</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Information</h4>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../index.html#team">Our Team</a></li>
+          <li><a href="../fees.html">Fees &amp; Rebates</a></li>
+          <li><a href="../faq.html">FAQ</a></li>
+          <li><a href="../join-our-team.html">Join Our Team</a></li>
+          <li><a href="../blog.html">Blog</a></li>
+          <li><a href="mailto:reception@moodandmindcentre.com">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Locations</h4>
+        <ul>
+          <li>Hope Island: Suite 8/8 Santa Barbara Rd</li>
+          <li>Upper Coomera: Gold Coast QLD</li>
+          <li><a href="../services/telehealth.html">Telehealth (Anywhere)</a></li>
+        </ul>
+        <h4 style="margin-top:28px">Follow Us</h4>
+        <ul class="footer-social-list">
+          <li><a href="https://www.facebook.com/moodandmindcentre" target="_blank" rel="noopener" class="footer-social-link"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg> Facebook</a></li>
+          <li><a href="https://www.instagram.com/moodandmindcentre" target="_blank" rel="noopener" class="footer-social-link"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg> Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 The Mood &amp; Mind Centre. All rights reserved.</span>
+      <span class="footer-credit">Hope Island · Upper Coomera · Gold Coast QLD &nbsp;·&nbsp; Made by <a href="https://kwinnovations.com.au" target="_blank" rel="noopener" style="color:var(--sage-mid);">KW | Innovations</a></span>
+    </div>
+  </footer>
+
+  <!-- Scroll to top bubble -->
+  <button class="scroll-top-btn" id="scrollTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">↑</button>
+  <script>
+    window.addEventListener('scroll', function() {
+      document.getElementById('scrollTopBtn').classList.toggle('visible', window.scrollY > 400);
+    });
+  </script>
+</body>
+</html>

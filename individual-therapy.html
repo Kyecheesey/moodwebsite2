@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Individual Therapy: The Mood & Mind Centre</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../styles.css"/>
+  <style>
+    .service-hero { padding: 120px 40px 80px; background: var(--deep); }
+    .service-hero .section-label { color: var(--sage-mid); }
+    .service-hero h1 { color: white; margin-bottom: 20px; }
+    .service-hero p { color: rgba(255,255,255,0.78); max-width: 600px; font-size: 18px; line-height: 1.7; }
+    .service-body { max-width: 900px; margin: 0 auto; padding: 80px 40px; }
+    .service-body h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.6rem,3vw,2.4rem); color: var(--deep); margin: 48px 0 16px; }
+    .service-body h2:first-child { margin-top: 0; }
+    .service-body p { color: var(--muted); line-height: 1.8; margin-bottom: 16px; }
+    .service-body ul { padding-left: 20px; }
+    .service-body ul li { color: var(--muted); line-height: 1.8; margin-bottom: 8px; }
+    .service-cta { background: var(--sage-light); border-radius: 24px; padding: 48px; text-align: center; margin-top: 64px; }
+    .service-cta h3 { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--deep); margin-bottom: 12px; }
+    .service-cta p { color: var(--muted); margin-bottom: 28px; }
+    .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; margin: 32px 0; }
+    .info-card { background: var(--cream); border-radius: 16px; padding: 28px; }
+    .info-card h4 { font-family: 'Playfair Display', serif; color: var(--deep); margin-bottom: 8px; }
+    .info-card p { color: var(--muted); font-size: 14px; margin: 0; line-height: 1.6; }
+    .faq { border-top: 1px solid rgba(44,62,53,0.1); padding-top: 16px; margin-top: 16px; }
+    .faq summary { font-weight: 500; color: var(--deep); cursor: pointer; padding: 8px 0; }
+    .faq p { padding: 8px 0 16px; margin: 0; }
+  
+  /* Scroll-to-top bubble */
+  .scroll-top-btn {
+    position: fixed; bottom: 32px; right: 32px; z-index: 999;
+    width: 48px; height: 48px; border-radius: 50%;
+    background: var(--sage); color: white;
+    border: none; font-size: 20px; cursor: pointer;
+    box-shadow: 0 4px 20px rgba(44,62,53,0.25);
+    display: flex; align-items: center; justify-content: center;
+    opacity: 0; pointer-events: none;
+    transition: opacity 0.3s, transform 0.3s;
+    font-family: var(--sans);
+  }
+  .scroll-top-btn.visible { opacity: 1; pointer-events: auto; }
+  .scroll-top-btn:hover { background: var(--deep); transform: translateY(-3px); }
+
+  
+    .page-hero {
+      position: relative; min-height: 480px;
+      display: flex; align-items: flex-end;
+      padding: 0 60px 72px; overflow: hidden;
+    }
+    .page-hero-bg { position: absolute; inset: 0; background-size: cover; filter: brightness(0.72); }
+    .page-hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(44,62,53,0.2) 0%, rgba(44,62,53,0.75) 100%); }
+    .page-hero-content { position: relative; z-index: 1; max-width: 760px; }
+    .page-hero .section-label { color: var(--sage-mid); margin-bottom: 16px; }
+    .page-hero h1 { color: white; margin-bottom: 20px; font-size: clamp(2.2rem,5vw,3.6rem); line-height: 1.15; }
+    .page-hero p { color: rgba(255,255,255,0.82); max-width: 600px; font-size: 18px; line-height: 1.7; margin: 0; }
+    @media (max-width:768px){ .page-hero { min-height:360px; padding: 0 24px 52px; } }
+
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="../index.html" class="nav-logo">The Mood & <span>Mind</span> Centre</a>
+        <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../index.html#services">Services</a></li>
+      <li><a href="../index.html#team">Our Team</a></li>
+      <li><a href="../join-our-team.html">Join Our Team</a></li>
+      <li><a href="../fees.html">Fees</a></li>
+      <li><a href="../faq.html">FAQ</a></li>
+      <li><a href="../blog.html">Blog</a></li>
+    </ul>
+    <a href="https://clientportal.zandahealth.com/clientportal/hzyb6/home" target="_blank" rel="noopener" class="nav-cta">Book a Session</a>
+  </nav>
+
+  <div class="service-hero">
+    <div class="section-label">Our Services</div>
+    <h1>Individual Therapy</h1>
+    <p>Personalised, one-on-one psychological support tailored to your unique needs and goals. Work with an experienced psychologist in a safe, confidential space at your own pace.</p>
+  </div>
+
+  <div class="service-body">
+
+    <h2>What is Individual Therapy?</h2>
+    <p>Individual therapy is a collaborative process between you and your psychologist. Through regular, focused sessions you will explore the thoughts, feelings, and patterns that are keeping you stuck: and develop practical strategies to move forward. Our psychologists draw on a range of evidence-based modalities, selecting the approach most likely to work for you as an individual.</p>
+    <p>Therapy is not about being "fixed": it is about gaining insight, building skills, and reclaiming a sense of agency over your mental health. Whether you are managing a long-standing condition or navigating a difficult period of life, individual therapy provides a structured and supportive framework for real, lasting change.</p>
+
+    <h2>Approaches We Use</h2>
+    <p>Our psychologists are trained across several evidence-based therapeutic modalities and will tailor their approach to suit your presentation and preferences:</p>
+    <ul>
+      <li><strong>Cognitive Behavioural Therapy (CBT)</strong>: identifying and challenging unhelpful thought patterns and behaviours</li>
+      <li><strong>Acceptance and Commitment Therapy (ACT)</strong>: building psychological flexibility and value-driven living</li>
+      <li><strong>Schema Therapy</strong>: understanding deep-seated patterns that developed in childhood and continue to affect adult life</li>
+      <li><strong>Eye Movement Desensitisation and Reprocessing (EMDR)</strong>: a specialised trauma-processing therapy with strong research support</li>
+      <li><strong>Dialectical Behaviour Therapy (DBT)</strong>: skills-based approach for emotional regulation, distress tolerance, and interpersonal effectiveness</li>
+      <li><strong>Mindfulness-Based Cognitive Therapy (MBCT)</strong>: integrating mindfulness practices with cognitive strategies</li>
+    </ul>
+
+    <h2>Who is Individual Therapy For?</h2>
+    <p>Individual therapy can benefit almost anyone, at any stage of life. Our psychologists work with adults and young people (16+) presenting with a wide range of concerns, including:</p>
+    <ul>
+      <li>Anxiety disorders: generalised anxiety, panic disorder, social anxiety, health anxiety</li>
+      <li>Depression and low mood</li>
+      <li>Trauma and post-traumatic stress disorder (PTSD)</li>
+      <li>Grief and loss</li>
+      <li>Obsessive-compulsive disorder (OCD)</li>
+      <li>Specific phobias</li>
+      <li>Stress and occupational burnout</li>
+      <li>Low self-esteem and perfectionism</li>
+      <li>Life transitions and adjustment difficulties</li>
+      <li>Chronic illness and pain</li>
+      <li>Sleep difficulties</li>
+    </ul>
+    <p>You do not need a diagnosis or a referral to access individual therapy, though a GP referral and Mental Health Care Plan (MHCP) will allow you to access Medicare rebates (see below).</p>
+
+    <h2>What to Expect</h2>
+    <p>Your first session is an intake appointment. Your psychologist will take time to understand your history, current concerns, and what you are hoping to achieve. Together you will set goals for therapy and discuss the approach that is likely to work best for you.</p>
+    <p>Sessions run for approximately 50 minutes. Most people find that attending fortnightly or weekly sessions in the early stages yields the best outcomes. As you progress, sessions typically become less frequent. The number of sessions needed varies: some people find significant relief in as few as 6–8 sessions, while others benefit from longer-term support.</p>
+    <p>Between sessions, your psychologist may suggest worksheets, reflective exercises, or behavioural experiments to help you practise new skills in everyday life.</p>
+
+    <div class="info-grid">
+      <div class="info-card">
+        <h4>Session Length</h4>
+        <p>50 minutes per individual session. Intake appointments may run slightly longer.</p>
+      </div>
+      <div class="info-card">
+        <h4>Standard Fee</h4>
+        <p>Approximately $220–$250 per session. Please contact us for current fees.</p>
+      </div>
+      <div class="info-card">
+        <h4>Medicare Rebate</h4>
+        <p>~$137 per session with a valid Mental Health Care Plan. Up to 10 rebated sessions per calendar year.</p>
+      </div>
+      <div class="info-card">
+        <h4>Locations</h4>
+        <p>Hope Island (Suite 8/8 Santa Barbara Road), Upper Coomera, and via Telehealth.</p>
+      </div>
+    </div>
+
+    <h2>Funding & Fees</h2>
+    <p>We believe in making quality psychological support as accessible as possible. Individual therapy at The Mood & Mind Centre can be funded through:</p>
+    <ul>
+      <li><strong>Medicare / Mental Health Care Plan (MHCP)</strong>: Ask your GP for a referral and MHCP. This entitles you to a Medicare rebate of approximately $137 per session for up to 10 sessions per calendar year.</li>
+      <li><strong>Private Health Insurance</strong>: Many policies include psychological services under extras cover. Check with your insurer for rebate amounts and whether a gap payment applies.</li>
+      <li><strong>NDIS</strong>: We are an NDIS provider. Participants with "Improved Daily Living" funding in their plan may be able to use it for individual psychology.</li>
+      <li><strong>WorkCover Queensland</strong>: Approved for WorkCover-funded psychological treatment for eligible workplace injury claims.</li>
+      <li><strong>Queensland Police Service (QPS)</strong>: We provide services under QPS-approved arrangements.</li>
+      <li><strong>Compensation Claims</strong>: We accept referrals for motor vehicle accident and other compensation claims.</li>
+      <li><strong>Private (Self-Funded)</strong>: No referral required. You pay the full session fee directly.</li>
+    </ul>
+
+    <h2>Frequently Asked Questions</h2>
+
+    <details class="faq">
+      <summary>Do I need a GP referral?</summary>
+      <p>No referral is required to book an appointment. However, if you would like to access Medicare rebates, you will need your GP to complete a Mental Health Care Plan (MHCP) and provide a referral to a psychologist. This is a straightforward process: simply make an appointment with your GP and ask for a Mental Health Care Plan.</p>
+    </details>
+
+    <details class="faq">
+      <summary>How many sessions will I need?</summary>
+      <p>This varies from person to person. For common presentations such as mild-to-moderate anxiety or depression, many people notice meaningful improvement within 6–10 sessions. More complex presentations, long-standing patterns, or trauma may benefit from longer-term work. Your psychologist will discuss a recommended treatment plan with you in your first session and review your progress regularly.</p>
+    </details>
+
+    <details class="faq">
+      <summary>Is everything I say confidential?</summary>
+      <p>Yes. Psychologists are bound by strict professional and legal confidentiality requirements. The only exceptions are situations involving serious risk of harm to yourself or others, or where disclosure is required by law. Your psychologist will explain these limits at your first appointment.</p>
+    </details>
+
+    <details class="faq">
+      <summary>What is the difference between a psychologist and a counsellor?</summary>
+      <p>Psychologists in Australia complete a minimum of six years of university training plus supervised practice, and are registered with the Psychology Board of Australia (AHPRA). They can diagnose psychological conditions and provide Medicare-rebatable services with a referral. Counsellors have varying levels of training and are not regulated under AHPRA. At The Mood & Mind Centre, all clinicians are registered psychologists.</p>
+    </details>
+
+    <details class="faq">
+      <summary>Can I use Telehealth instead of attending in person?</summary>
+      <p>Absolutely. All individual therapy services are available via Telehealth (secure video call). The same Medicare rebates apply. See our <a href="telehealth.html">Telehealth page</a> for more information.</p>
+    </details>
+
+    <div class="service-cta">
+      <h3>Ready to get started?</h3>
+      <p>Book online or call us on 07 5573 2200. Available at Hope Island, Upper Coomera, or via Telehealth.</p>
+      <a href="https://clientportal.zandahealth.com/clientportal/hzyb6/home" target="_blank" class="btn-primary">Book a Session</a>
+    </div>
+
+  </div>
+
+    <footer id="contact">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo"><a href="../index.html" style="color:inherit;text-decoration:none;">The Mood & <span>Mind</span> Centre</a></div>
+        <p class="footer-about">A private psychology practice delivering evidence-based care with warmth and expertise. Serving the Gold Coast community across two convenient locations.</p>
+        <div class="footer-contact">
+          <div style="margin-bottom:8px">📞 <a href="tel:0755732200">07 5573 2200</a></div>
+          <div>✉ <a href="mailto:reception@moodandmindcentre.com">reception@moodandmindcentre.com</a></div>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="../services/individual-therapy.html">Individual Therapy</a></li>
+          <li><a href="../services/group-programs.html">Group Programs</a></li>
+          <li><a href="../services/telehealth.html">Telehealth</a></li>
+          <li><a href="../services/assessments.html">Assessments</a></li>
+          <li><a href="../services/child-family.html">Child &amp; Family</a></li>
+          <li><a href="../services/couples-counselling.html">Couples Counselling</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Information</h4>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../index.html#team">Our Team</a></li>
+          <li><a href="../fees.html">Fees &amp; Rebates</a></li>
+          <li><a href="../faq.html">FAQ</a></li>
+          <li><a href="../join-our-team.html">Join Our Team</a></li>
+          <li><a href="../blog.html">Blog</a></li>
+          <li><a href="mailto:reception@moodandmindcentre.com">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Locations</h4>
+        <ul>
+          <li>Hope Island: Suite 8/8 Santa Barbara Rd</li>
+          <li>Upper Coomera: Gold Coast QLD</li>
+          <li><a href="../services/telehealth.html">Telehealth (Anywhere)</a></li>
+        </ul>
+        <h4 style="margin-top:28px">Follow Us</h4>
+        <ul class="footer-social-list">
+          <li><a href="https://www.facebook.com/moodandmindcentre" target="_blank" rel="noopener" class="footer-social-link"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg> Facebook</a></li>
+          <li><a href="https://www.instagram.com/moodandmindcentre" target="_blank" rel="noopener" class="footer-social-link"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg> Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 The Mood &amp; Mind Centre. All rights reserved.</span>
+      <span class="footer-credit">Hope Island · Upper Coomera · Gold Coast QLD &nbsp;·&nbsp; Made by <a href="https://kwinnovations.com.au" target="_blank" rel="noopener" style="color:var(--sage-mid);">KW | Innovations</a> &nbsp;·&nbsp; <a href="../admin/index.html" style="color:rgba(255,255,255,0.25);font-size:0.75rem;" title="Staff Login">Staff Login</a></span>
+    </div>
+  </footer>
+
+  <!-- Scroll to top bubble -->
+  <button class="scroll-top-btn" id="scrollTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">↑</button>
+  <script>
+    window.addEventListener('scroll', function() {
+      document.getElementById('scrollTopBtn').classList.toggle('visible', window.scrollY > 400);
+    });
+  </script>
+  <script>
+    (function(){
+      var nav = document.querySelector('nav');
+      if(!nav) return;
+      function update(){ nav.classList.toggle('scrolled', window.scrollY > 10); }
+      window.addEventListener('scroll', update, {passive:true});
+      update();
+    })();
+  </script>
+</body>
+</html>

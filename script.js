@@ -312,6 +312,12 @@ function filterTeam(tag, btn) {
   }
 
   function onWheel(e) {
+    if (unlocked) return;
+    if (window.scrollY > 1) {
+      unlock();
+      return;
+    }
+    if (e.deltaY <= 0) return;
     e.preventDefault();
     advance(e.deltaY);
   }
@@ -319,9 +325,15 @@ function filterTeam(tag, btn) {
   let _ty = 0;
   function onTouchStart(e) { _ty = e.touches[0].clientY; }
   function onTouchMove(e) {
-    e.preventDefault();
+    if (unlocked) return;
+    if (window.scrollY > 1) {
+      unlock();
+      return;
+    }
     const dy = _ty - e.touches[0].clientY;
     _ty = e.touches[0].clientY;
+    if (dy <= 0) return;
+    e.preventDefault();
     advance(dy * 1.5);
   }
 
@@ -352,9 +364,15 @@ function filterTeam(tag, btn) {
     renderB();
   }
 
-  // Kick off Phase A
-  window.addEventListener('wheel',      onWheel,      { passive: false });
-  window.addEventListener('touchstart', onTouchStart, { passive: true  });
-  window.addEventListener('touchmove',  onTouchMove,  { passive: false });
-  renderA();
+  // Kick off Phase A only for fresh top-of-page visits.
+  if (window.scrollY > 1 || window.location.hash) {
+    progress = 1;
+    renderA();
+    unlock();
+  } else {
+    window.addEventListener('wheel',      onWheel,      { passive: false });
+    window.addEventListener('touchstart', onTouchStart, { passive: true  });
+    window.addEventListener('touchmove',  onTouchMove,  { passive: false });
+    renderA();
+  }
 })();

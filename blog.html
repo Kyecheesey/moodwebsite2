@@ -1,0 +1,636 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Blog &amp; Resources: The Mood & Mind Centre</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
+  <style>
+    
+    .page-hero .section-label { color: var(--sage-mid); margin-bottom: 16px; }
+    .page-hero h1 { color: white; margin-bottom: 20px; font-size: clamp(2.4rem,5vw,4rem); }
+    .page-hero p { color: rgba(255,255,255,0.75); max-width: 600px; font-size: 18px; line-height: 1.7; }
+
+    .blog-page-body { background: var(--cream); }
+    .blog-page-inner { max-width: 1200px; margin: 0 auto; padding: 80px 40px; }
+
+    /* Filter bar */
+    .blog-filter { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 56px; }
+    .filter-btn { background: white; border: 1.5px solid rgba(44,62,53,0.12); color: var(--muted); border-radius: 50px; padding: 8px 20px; font-size: 14px; font-family: 'DM Sans', sans-serif; cursor: pointer; transition: all 0.2s; }
+    .filter-btn:hover, .filter-btn.active { background: var(--sage); border-color: var(--sage); color: white; }
+
+    /* Featured article */
+    .blog-featured { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-radius: 20px; overflow: hidden; box-shadow: 0 8px 40px rgba(44,62,53,0.1); margin-bottom: 64px; background: white; }
+    .blog-featured-img { background: var(--sage-light); min-height: 380px; display: flex; align-items: center; justify-content: center; font-size: 80px; }
+    .blog-featured-body { padding: 52px 48px; display: flex; flex-direction: column; justify-content: center; }
+    .blog-featured-body .blog-tag { margin-bottom: 16px; }
+    .blog-featured-body h2 { font-family: 'Playfair Display', serif; color: var(--deep); font-size: clamp(1.4rem,2.5vw,2rem); margin-bottom: 16px; line-height: 1.3; }
+    .blog-featured-body p { color: var(--muted); line-height: 1.8; margin-bottom: 24px; }
+    .blog-featured-body .blog-meta-row { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+    .blog-meta-avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--sage-light); display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
+    .blog-meta-info { font-size: 14px; color: var(--muted); }
+    .blog-meta-info strong { color: var(--deep); }
+
+    /* Article grid */
+    .articles-heading { font-family: 'Playfair Display', serif; color: var(--deep); font-size: 1.4rem; margin-bottom: 32px; }
+    .articles-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px,1fr)); gap: 28px; margin-bottom: 64px; }
+    .article-card { background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(44,62,53,0.06); transition: transform 0.2s, box-shadow 0.2s; text-decoration: none; display: block; }
+    .article-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(44,62,53,0.12); }
+    .article-thumb { height: 180px; display: flex; align-items: center; justify-content: center; font-size: 52px; }
+    .article-body { padding: 24px 28px 28px; }
+    .blog-tag { display: inline-block; background: var(--sage-light); color: var(--sage); border-radius: 50px; padding: 4px 12px; font-size: 12px; font-weight: 500; margin-bottom: 10px; }
+    .article-title { font-family: 'Playfair Display', serif; color: var(--deep); font-size: 1.05rem; line-height: 1.4; margin-bottom: 10px; }
+    .article-excerpt { color: var(--muted); font-size: 14px; line-height: 1.7; margin-bottom: 16px; }
+    .article-meta { font-size: 13px; color: var(--sage-mid); display: flex; justify-content: space-between; align-items: center; }
+    .read-more { font-size: 13px; color: var(--sage); font-weight: 500; text-decoration: none; }
+    .read-more:hover { text-decoration: underline; }
+
+    /* Resources section */
+    .resources-section { margin-top: 80px; padding-top: 64px; border-top: 2px solid rgba(44,62,53,0.08); }
+    .resources-section-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 12px; flex-wrap: wrap; gap: 12px; }
+    .resources-section-header h2 { font-family: 'Playfair Display', serif; color: var(--deep); font-size: clamp(1.5rem,2.5vw,2rem); margin: 0; }
+    .resources-section-header p { color: var(--muted); font-size: 15px; max-width: 520px; line-height: 1.6; }
+    .resources-intro { color: var(--muted); line-height: 1.8; margin-bottom: 40px; max-width: 660px; }
+    .resources-category { margin-bottom: 40px; }
+    .resources-category-title { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--sage); margin-bottom: 16px; }
+    .resources-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px,1fr)); gap: 16px; }
+    .resource-card { background: white; border-radius: 14px; padding: 22px 24px; box-shadow: 0 2px 12px rgba(44,62,53,0.06); display: flex; align-items: flex-start; gap: 16px; transition: transform 0.18s, box-shadow 0.18s; }
+    .resource-card:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(44,62,53,0.1); }
+    .resource-icon { font-size: 26px; flex-shrink: 0; margin-top: 2px; }
+    .resource-info { flex: 1; min-width: 0; }
+    .resource-title { font-family: 'Playfair Display', serif; color: var(--deep); font-size: 0.95rem; line-height: 1.4; margin-bottom: 5px; }
+    .resource-desc { color: var(--muted); font-size: 13px; line-height: 1.5; margin-bottom: 12px; }
+    .resource-dl { display: inline-flex; align-items: center; gap: 6px; background: var(--sage-light); color: var(--sage); border-radius: 50px; padding: 6px 14px; font-size: 12px; font-weight: 600; text-decoration: none; transition: background 0.2s, color 0.2s; }
+    .resource-dl:hover { background: var(--sage); color: white; }
+    .resource-dl svg { width: 12px; height: 12px; flex-shrink: 0; }
+
+    /* Newsletter */
+    .newsletter-box { background: var(--deep); border-radius: 20px; padding: 56px 48px; display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; margin-top: 20px; }
+    .newsletter-box h3 { font-family: 'Playfair Display', serif; color: white; font-size: 1.8rem; margin-bottom: 12px; }
+    .newsletter-box p { color: rgba(255,255,255,0.7); line-height: 1.7; }
+    .newsletter-form { display: flex; gap: 12px; }
+    .newsletter-input { flex: 1; background: rgba(255,255,255,0.1); border: 1.5px solid rgba(255,255,255,0.2); border-radius: 50px; padding: 14px 20px; color: white; font-size: 15px; font-family: 'DM Sans', sans-serif; outline: none; }
+    .newsletter-input::placeholder { color: rgba(255,255,255,0.5); }
+    .newsletter-input:focus { border-color: var(--sage-mid); }
+    .newsletter-submit { background: var(--sage); color: white; border: none; border-radius: 50px; padding: 14px 28px; font-size: 15px; font-weight: 500; cursor: pointer; white-space: nowrap; font-family: 'DM Sans', sans-serif; }
+    .newsletter-submit:hover { background: #3d6b5e; }
+    .newsletter-note { color: rgba(255,255,255,0.45); font-size: 12px; margin-top: 10px; }
+
+    @media (max-width: 900px) {
+      
+      .blog-page-inner { padding: 60px 24px; }
+      .blog-featured { grid-template-columns: 1fr; }
+      .blog-featured-img { min-height: 220px; }
+      .blog-featured-body { padding: 36px 28px; }
+      .newsletter-box { grid-template-columns: 1fr; gap: 28px; padding: 40px 28px; }
+      .newsletter-form { flex-direction: column; }
+    }
+  
+  /* Scroll-to-top bubble */
+  .scroll-top-btn {
+    position: fixed; bottom: 32px; right: 32px; z-index: 999;
+    width: 48px; height: 48px; border-radius: 50%;
+    background: var(--sage); color: white;
+    border: none; font-size: 20px; cursor: pointer;
+    box-shadow: 0 4px 20px rgba(44,62,53,0.25);
+    display: flex; align-items: center; justify-content: center;
+    opacity: 0; pointer-events: none;
+    transition: opacity 0.3s, transform 0.3s;
+    font-family: var(--sans);
+  }
+  .scroll-top-btn.visible { opacity: 1; pointer-events: auto; }
+  .scroll-top-btn:hover { background: var(--deep); transform: translateY(-3px); }
+
+  
+    .page-hero {
+      position: relative;
+      min-height: 480px;
+      display: flex;
+      align-items: flex-end;
+      padding: 0 60px 72px;
+      overflow: hidden;
+    }
+    .page-hero-bg {
+      position: absolute; inset: 0;
+      background-size: cover;
+      background-position: center 40%;
+      filter: brightness(0.72);
+    }
+    .page-hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to bottom, rgba(44,62,53,0.2) 0%, rgba(44,62,53,0.75) 100%);
+    }
+    .page-hero-content { position: relative; z-index: 1; max-width: 760px; }
+    .page-hero .section-label { color: var(--sage-mid); margin-bottom: 16px; }
+    .page-hero h1 { color: white; margin-bottom: 20px; font-size: clamp(2.2rem,5vw,3.6rem); line-height: 1.15; }
+    .page-hero p { color: rgba(255,255,255,0.82); max-width: 600px; font-size: 18px; line-height: 1.7; margin: 0; }
+    @media (max-width: 768px) {
+      .page-hero { min-height: 360px; padding: 0 24px 52px; }
+    }
+
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html" class="nav-logo">The Mood & <span>Mind</span> Centre</a>
+        <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#team">Our Team</a></li>
+      <li><a href="join-our-team.html">Join Our Team</a></li>
+      <li><a href="fees.html">Fees</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="blog.html">Blog</a></li>
+    </ul>
+    <a href="https://clientportal.zandahealth.com/clientportal/hzyb6/home" target="_blank" rel="noopener" class="nav-cta">Book a Session</a>
+  </nav>
+
+  <div class="page-hero">
+    <div class="page-hero-bg" style="background-image:url('images/heroes/hero-team.jpg');background-position:center 30%;"></div>
+    <div class="page-hero-overlay"></div>
+    <div class="page-hero-content">
+    <div class="section-label">Resources &amp; Insights</div>
+    <h1>The Mood &amp; Mind <em>Blog</em></h1>
+    <p>Evidence-based insights, practical tools, and thoughtful reflections from our team of Gold Coast psychologists: written to support your everyday wellbeing.</p>
+  </div>
+  </div>  <div class="blog-page-body">
+  <div class="blog-page-inner">
+
+    <!-- Filter -->
+    <div class="blog-filter">
+      <button class="filter-btn active">All topics</button>
+      <button class="filter-btn">Anxiety</button>
+      <button class="filter-btn">Depression</button>
+      <button class="filter-btn">Relationships</button>
+      <button class="filter-btn">Self-compassion</button>
+      <button class="filter-btn">Women's Health</button>
+      <button class="filter-btn">Parenting</button>
+      <button class="filter-btn">Technology &amp; Mind</button>
+      <button class="filter-btn">Trauma</button>
+      <button class="filter-btn">Wellbeing</button>
+    </div>
+
+    <!-- Featured -->
+    <a href="blog/self-compassion.html" class="blog-featured" data-topic="Self-compassion" style="text-decoration:none;color:inherit;">
+      <div class="blog-featured-img" style="background: linear-gradient(135deg, #e8f0ec 0%, #d4e4da 100%);">🧘</div>
+      <div class="blog-featured-body">
+        <span class="blog-tag">Self-compassion</span>
+        <h2>Be kinder to yourself: but how? Practical ways to build self-compassion</h2>
+        <p>So many people hear "be kinder to yourself": but when it comes to actually doing it, it can feel unclear or even uncomfortable. Here's where to start.</p>
+        <div class="blog-meta-row">
+          <div class="blog-meta-avatar">🌸</div>
+          <div class="blog-meta-info">
+            <strong>Renee Gentle</strong><br>Registered Psychologist · 2026
+          </div>
+          <span class="read-more" style="margin-left:auto;">Read article →</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Article grid -->
+    <h3 class="articles-heading">All articles</h3>
+    <div class="articles-grid">
+
+      <a href="blog/ai-mental-health.html" class="article-card" data-topic="Technology &amp; Mind">
+        <div class="article-thumb" style="background: linear-gradient(135deg, #fdf6ee 0%, #f7e8d4 100%);">🤖</div>
+        <div class="article-body">
+          <span class="blog-tag" style="background:#fdf0e0;color:#b07030;">Technology &amp; Mind</span>
+          <div class="article-title">AI is here to stay: what does that mean for our mental health?</div>
+          <p class="article-excerpt">Smartphones brought constant connectivity. AI brings something different. A psychologist's perspective on navigating a world that thinks alongside you.</p>
+          <div class="article-meta">
+            <span>Danielle Raynor · 2026</span>
+            <span class="read-more">Read →</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="blog/perimenopause.html" class="article-card" data-topic="Women's Health">
+        <div class="article-thumb" style="background: linear-gradient(135deg, #f0f5e8 0%, #deebd4 100%);">🌿</div>
+        <div class="article-body">
+          <span class="blog-tag">Women's Health</span>
+          <div class="article-title">Perimenopause as a PAUSE: reframing a life transition</div>
+          <p class="article-excerpt">Perimenopause is often talked about in terms of symptoms and disruption. But what if it's also an invitation: a pause: to reconnect with yourself?</p>
+          <div class="article-meta">
+            <span>Katrien van Zyl · 2025</span>
+            <span class="read-more">Read →</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="blog/anxiety-everyday.html" class="article-card" data-topic="Anxiety">
+        <div class="article-thumb" style="background: linear-gradient(135deg, #edf2f8 0%, #d8e6f5 100%);">💭</div>
+        <div class="article-body">
+          <span class="blog-tag" style="background:#e8eef8;color:#3a5a8a;">Anxiety</span>
+          <div class="article-title">When worry becomes your default setting: understanding everyday anxiety</div>
+          <p class="article-excerpt">A little anxiety is normal: it keeps us safe. But when anxious thinking becomes the lens through which you see everything, it's time to look more closely.</p>
+          <div class="article-meta">
+            <span>The Mood &amp; Mind Centre · 2026</span>
+            <span class="read-more">Read →</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="blog/sleep-mental-health.html" class="article-card" data-topic="Wellbeing">
+        <div class="article-thumb" style="background: linear-gradient(135deg, #ede8f5 0%, #d8d0ed 100%);">🌙</div>
+        <div class="article-body">
+          <span class="blog-tag" style="background:#ede8f5;color:#5a3d8a;">Wellbeing</span>
+          <div class="article-title">Sleep and mental health: the two-way relationship you need to understand</div>
+          <p class="article-excerpt">Poor sleep worsens mental health. Poor mental health worsens sleep. Breaking the cycle starts with understanding why the loop forms in the first place.</p>
+          <div class="article-meta">
+            <span>The Mood &amp; Mind Centre · 2025</span>
+            <span class="read-more">Read →</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="blog/talking-to-kids.html" class="article-card" data-topic="Parenting">
+        <div class="article-thumb" style="background: linear-gradient(135deg, #fef5e8 0%, #fde8c8 100%);">👨‍👩‍👧</div>
+        <div class="article-body">
+          <span class="blog-tag" style="background:#fef0d8;color:#a06020;">Parenting</span>
+          <div class="article-title">How to talk to your child about big feelings: at any age</div>
+          <p class="article-excerpt">Children feel deeply but often can't name what they're experiencing. Here's a practical, age-appropriate guide to opening the conversation about emotions.</p>
+          <div class="article-meta">
+            <span>The Mood &amp; Mind Centre · 2026</span>
+            <span class="read-more">Read →</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="blog/relationships-conflict.html" class="article-card" data-topic="Relationships">
+        <div class="article-thumb" style="background: linear-gradient(135deg, #fde8e8 0%, #f5d0d0 100%);">💬</div>
+        <div class="article-body">
+          <span class="blog-tag" style="background:#fde8e8;color:#8a3535;">Relationships</span>
+          <div class="article-title">Fighting fair: how the way you argue matters more than what you argue about</div>
+          <p class="article-excerpt">Most couples don't come undone because of the topics they fight about: they come undone because of the patterns those fights create. Here's what to watch for.</p>
+          <div class="article-meta">
+            <span>The Mood &amp; Mind Centre · 2026</span>
+            <span class="read-more">Read →</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="blog/depression-signs.html" class="article-card" data-topic="Depression">
+        <div class="article-thumb" style="background: linear-gradient(135deg, #e8ecf5 0%, #d0d8ed 100%);">🌧️</div>
+        <div class="article-body">
+          <span class="blog-tag" style="background:#e8ecf5;color:#3a4a7a;">Depression</span>
+          <div class="article-title">It's not just sadness: the lesser-known signs of depression</div>
+          <p class="article-excerpt">Most people know depression involves sadness: but irritability, brain fog, physical pain, and disconnection are just as common, and often go unrecognised.</p>
+          <div class="article-meta">
+            <span>The Mood &amp; Mind Centre · 2025</span>
+            <span class="read-more">Read →</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="blog/trauma-body.html" class="article-card" data-topic="Trauma">
+        <div class="article-thumb" style="background: linear-gradient(135deg, #e8f2ee 0%, #d0e8dc 100%);">🌱</div>
+        <div class="article-body">
+          <span class="blog-tag">Trauma</span>
+          <div class="article-title">The body keeps the score: what trauma looks like when it lives in your nervous system</div>
+          <p class="article-excerpt">Trauma isn't always a dramatic event. Sometimes it's the accumulation of smaller experiences that leave the nervous system in a state of chronic activation.</p>
+          <div class="article-meta">
+            <span>The Mood &amp; Mind Centre · 2025</span>
+            <span class="read-more">Read →</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="blog/burnout.html" class="article-card" data-topic="Wellbeing">
+        <div class="article-thumb" style="background: linear-gradient(135deg, #f5ede8 0%, #edd8cc 100%);">🔥</div>
+        <div class="article-body">
+          <span class="blog-tag" style="background:#f5ede8;color:#8a4520;">Wellbeing</span>
+          <div class="article-title">Burnout vs. tiredness: how to tell the difference (and what to do about it)</div>
+          <p class="article-excerpt">Tiredness goes away with rest. Burnout doesn't. Understanding the difference is the first step toward genuine recovery: not just a weekend off.</p>
+          <div class="article-meta">
+            <span>The Mood &amp; Mind Centre · 2026</span>
+            <span class="read-more">Read →</span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+
+    <!-- Free Resources -->
+    <div class="resources-section" id="resources">
+      <div class="resources-section-header">
+        <div>
+          <div class="section-label" style="margin-bottom:8px;">Free Downloads</div>
+          <h2>Worksheets &amp; resources</h2>
+        </div>
+      </div>
+      <p class="resources-intro">Our psychologists have put together a library of free, evidence-based worksheets and tools you can use at home. Download any resource below: no sign-up required.</p>
+
+      <!-- Anxiety & Stress -->
+      <div class="resources-category">
+        <div class="resources-category-title">Anxiety &amp; Stress</div>
+        <div class="resources-grid">
+          <div class="resource-card">
+            <div class="resource-icon">🫁</div>
+            <div class="resource-info">
+              <div class="resource-title">Breathing Exercises for Anxiety Relief</div>
+              <div class="resource-desc">Breathing techniques to calm your mind and body.</div>
+              <a href="resources/breathing-exercises.pdf" class="resource-dl" download>
+                <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 1v7M3 6l3 3 3-3M1 11h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Download PDF
+              </a>
+            </div>
+          </div>
+          <div class="resource-card">
+            <div class="resource-icon">🧲</div>
+            <div class="resource-info">
+              <div class="resource-title">Grounding Exercises for Anxiety Relief</div>
+              <div class="resource-desc">Simple grounding techniques to bring you back to the present.</div>
+              <a href="resources/grounding-exercises.pdf" class="resource-dl" download>
+                <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 1v7M3 6l3 3 3-3M1 11h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Download PDF
+              </a>
+            </div>
+          </div>
+          <div class="resource-card">
+            <div class="resource-icon">🌀</div>
+            <div class="resource-info">
+              <div class="resource-title">Visualisation Exercises for Anxiety</div>
+              <div class="resource-desc">Exercises to reduce the impact of unhelpful thoughts.</div>
+              <a href="resources/visualisation-anxiety.pdf" class="resource-dl" download>
+                <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 1v7M3 6l3 3 3-3M1 11h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Download PDF
+              </a>
+            </div>
+          </div>
+          <div class="resource-card">
+            <div class="resource-icon">⚡</div>
+            <div class="resource-info">
+              <div class="resource-title">Panic Attack Psychoeducation &amp; Action Plan</div>
+              <div class="resource-desc">A step-by-step guide to managing a panic attack.</div>
+              <a href="resources/panic-attack-plan.pdf" class="resource-dl" download>
+                <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 1v7M3 6l3 3 3-3M1 11h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Download PDF
+              </a>
+            </div>
+          </div>
+          <div class="resource-card">
+            <div class="resource-icon">📝</div>
+            <div class="resource-info">
+              <div class="resource-title">Coping With Anxiety: Daily Tracker &amp; Journal</div>
+              <div class="resource-desc">Track your thoughts and feelings each day.</div>
+              <a href="resources/anxiety-tracker.pdf" class="resource-dl" download>
+                <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 1v7M3 6l3 3 3-3M1 11h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Download PDF
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mood & Self-reflection -->
+      <div class="resources-category">
+        <div class="resources-category-title">Mood &amp; Self-reflection</div>
+        <div class="resources-grid">
+          <div class="resource-card">
+            <div class="resource-icon">📓</div>
+            <div class="resource-info">
+              <div class="resource-title">Daily Mood Journal</div>
+              <div class="resource-desc">Reflect and journal your mood throughout the day.</div>
+              <a href="resources/mood-journal.pdf" class="resource-dl" download>
+                <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 1v7M3 6l3 3 3-3M1 11h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Download PDF
+              </a>
+            </div>
+          </div>
+          <div class="resource-card">
+            <div class="resource-icon">🎨</div>
+            <div class="resource-info">
+              <div class="resource-title">Feeling Zones</div>
+              <div class="resource-desc">Note your feelings, triggers, and what helps.</div>
+              <a href="resources/feeling-zones.pdf" class="resource-dl" download>
+                <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 1v7M3 6l3 3 3-3M1 11h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Download PDF
+              </a>
+            </div>
+          </div>
+          <div class="resource-card">
+            <div class="resource-icon">📊</div>
+            <div class="resource-info">
+              <div class="resource-title">Symptom Tracker</div>
+              <div class="resource-desc">Track your symptoms for each day of the month.</div>
+              <a href="resources/symptom-tracker.pdf" class="resource-dl" download>
+                <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 1v7M3 6l3 3 3-3M1 11h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Download PDF
+              </a>
+            </div>
+          </div>
+          <div class="resource-card">
+            <div class="resource-icon">☁️</div>
+            <div class="resource-info">
+              <div class="resource-title">Guided Imagery for Depression</div>
+              <div class="resource-desc">Guided imagery to support mood and positive reinforcement.</div>
+              <a href="resources/guided-imagery-depression.pdf" class="resource-dl" download>
+                <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 1v7M3 6l3 3 3-3M1 11h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Download PDF
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mindfulness & Relaxation -->
+      <div class="resources-category">
+        <div class="resources-category-title">Mindfulness &amp; Relaxation</div>
+        <div class="resources-grid">
+          <div class="resource-card">
+            <div class="resource-icon">🧘</div>
+            <div class="resource-info">
+              <div class="resource-title">Mindfulness Meditation Script</div>
+              <div class="resource-desc">A guided meditation script focusing on the senses.</div>
+              <a href="resources/mindfulness-meditation.pdf" class="resource-dl" download>
+                <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 1v7M3 6l3 3 3-3M1 11h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Download PDF
+              </a>
+            </div>
+          </div>
+          <div class="resource-card">
+            <div class="resource-icon">💪</div>
+            <div class="resource-info">
+              <div class="resource-title">Progressive Muscle Relaxation</div>
+              <div class="resource-desc">A relaxation technique to reduce muscle tension.</div>
+              <a href="resources/progressive-muscle-relaxation.pdf" class="resource-dl" download>
+                <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 1v7M3 6l3 3 3-3M1 11h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Download PDF
+              </a>
+            </div>
+          </div>
+          <div class="resource-card">
+            <div class="resource-icon">🥗</div>
+            <div class="resource-info">
+              <div class="resource-title">Mindful Eating</div>
+              <div class="resource-desc">A practical guide to mindful eating.</div>
+              <a href="resources/mindful-eating.pdf" class="resource-dl" download>
+                <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 1v7M3 6l3 3 3-3M1 11h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Download PDF
+              </a>
+            </div>
+          </div>
+          <div class="resource-card">
+            <div class="resource-icon">🏡</div>
+            <div class="resource-info">
+              <div class="resource-title">Family Mindfulness Exercises</div>
+              <div class="resource-desc">Mindfulness activities to support connection at home.</div>
+              <a href="resources/family-mindfulness.pdf" class="resource-dl" download>
+                <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 1v7M3 6l3 3 3-3M1 11h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Download PDF
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Men's Health & Productivity -->
+      <div class="resources-category">
+        <div class="resources-category-title">Men's Health &amp; Productivity</div>
+        <div class="resources-grid">
+          <div class="resource-card">
+            <div class="resource-icon">💙</div>
+            <div class="resource-info">
+              <div class="resource-title">15 Healthy Habits for Men's Mental Health</div>
+              <div class="resource-desc">Small, consistent habits that support mental wellbeing.</div>
+              <a href="resources/mens-mental-health-habits.pdf" class="resource-dl" download>
+                <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 1v7M3 6l3 3 3-3M1 11h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Download PDF
+              </a>
+            </div>
+          </div>
+          <div class="resource-card">
+            <div class="resource-icon">⏱️</div>
+            <div class="resource-info">
+              <div class="resource-title">Time Management Techniques</div>
+              <div class="resource-desc">Seinfeld Strategy, Pomodoro, time blocking, Eisenhower Matrix.</div>
+              <a href="resources/time-management.pdf" class="resource-dl" download>
+                <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 1v7M3 6l3 3 3-3M1 11h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Download PDF
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Grief & Eating Disorders -->
+      <div class="resources-category">
+        <div class="resources-category-title">Grief &amp; Specialised Topics</div>
+        <div class="resources-grid">
+          <div class="resource-card">
+            <div class="resource-icon">🕊️</div>
+            <div class="resource-info">
+              <div class="resource-title">Stages of Grief: Information Sheet</div>
+              <div class="resource-desc">Understanding grief stages and supportive coping ideas.</div>
+              <a href="resources/stages-of-grief.pdf" class="resource-dl" download>
+                <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 1v7M3 6l3 3 3-3M1 11h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Download PDF
+              </a>
+            </div>
+          </div>
+          <div class="resource-card">
+            <div class="resource-icon">🌿</div>
+            <div class="resource-info">
+              <div class="resource-title">Understanding Eating Disorders Workbook</div>
+              <div class="resource-desc">Workbook to understand symptoms and underlying factors.</div>
+              <a href="resources/eating-disorders-workbook.pdf" class="resource-dl" download>
+                <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 1v7M3 6l3 3 3-3M1 11h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Download PDF
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Newsletter -->
+    <div class="newsletter-box">
+      <div>
+        <h3>Wellbeing insights, delivered</h3>
+        <p>Join our mailing list for practical mental health tips, new articles, and updates from our team: straight to your inbox, never more than once a month.</p>
+      </div>
+      <div>
+        <div class="newsletter-form">
+          <input type="email" class="newsletter-input" id="newsletterEmail" placeholder="Your email address"/>
+          <button class="newsletter-submit" onclick="subscribeNewsletter()">Subscribe</button>
+        </div>
+        <p class="newsletter-note">No spam, ever. Unsubscribe at any time.</p>
+      </div>
+    </div>
+
+  </div>
+  </div>
+
+    <footer id="contact">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo"><a href="index.html" style="color:inherit;text-decoration:none;">The Mood & <span>Mind</span> Centre</a></div>
+        <p class="footer-about">A private psychology practice delivering evidence-based care with warmth and expertise. Serving the Gold Coast community across two convenient locations.</p>
+        <div class="footer-contact">
+          <div style="margin-bottom:8px">📞 <a href="tel:0755732200">07 5573 2200</a></div>
+          <div>✉ <a href="mailto:reception@moodandmindcentre.com">reception@moodandmindcentre.com</a></div>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services/individual-therapy.html">Individual Therapy</a></li>
+          <li><a href="services/group-programs.html">Group Programs</a></li>
+          <li><a href="services/telehealth.html">Telehealth</a></li>
+          <li><a href="services/assessments.html">Assessments</a></li>
+          <li><a href="services/child-family.html">Child &amp; Family</a></li>
+          <li><a href="services/couples-counselling.html">Couples Counselling</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Information</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#team">Our Team</a></li>
+          <li><a href="fees.html">Fees &amp; Rebates</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="join-our-team.html">Join Our Team</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="mailto:reception@moodandmindcentre.com">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Locations</h4>
+        <ul>
+          <li>Hope Island: Suite 8/8 Santa Barbara Rd</li>
+          <li>Upper Coomera: Gold Coast QLD</li>
+          <li><a href="services/telehealth.html">Telehealth (Anywhere)</a></li>
+        </ul>
+        <h4 style="margin-top:28px">Follow Us</h4>
+        <ul class="footer-social-list">
+          <li><a href="https://www.facebook.com/moodandmindcentre" target="_blank" rel="noopener" class="footer-social-link"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg> Facebook</a></li>
+          <li><a href="https://www.instagram.com/moodandmindcentre" target="_blank" rel="noopener" class="footer-social-link"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg> Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 The Mood &amp; Mind Centre. All rights reserved.</span>
+      <span class="footer-credit">Hope Island · Upper Coomera · Gold Coast QLD &nbsp;·&nbsp; Made by <a href="https://kwinnovations.com.au" target="_blank" rel="noopener" style="color:var(--sage-mid);">KW | Innovations</a> &nbsp;·&nbsp; <a href="admin/index.html" style="color:rgba(255,255,255,0.25);font-size:0.75rem;" title="Staff Login">Staff Login</a></span>
+    </div>
+  </footer>
+
+  <!-- Scroll to top bubble -->
+  <button class="scroll-top-btn" id="scrollTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">↑</button>
+  <script>
+    window.addEventListener('scroll', function() {
+      document.getElementById('scrollTopBtn').classList.toggle('visible', window.scrollY > 400);
+    });
+  </script>
+  <script>
+    (function(){
+      var nav = document.querySelector('nav');
+      if(!nav) return;
+      function update(){ nav.classList.toggle('scrolled', window.scrollY > 10); }
+      window.addEventListener('scroll', update, {passive:true});
+      update();
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Jessica Parker: The Mood &amp; Mind Centre</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../styles.css"/>
+  <style>
+    .profile-hero { background: var(--deep); padding: 120px 60px 64px; }
+    .profile-hero-inner { max-width: 1000px; margin: 0 auto; display: flex; gap: 56px; align-items: flex-start; }
+    .profile-photo { width: 220px; height: 260px; border-radius: 20px; overflow: hidden; flex-shrink: 0; box-shadow: 0 12px 40px rgba(0,0,0,0.3); }
+    .profile-photo img { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
+    .profile-hero-text { flex: 1; }
+    .profile-hero-text .section-label { color: var(--sage-mid); margin-bottom: 12px; }
+    .profile-hero-text h1 { color: white; font-size: clamp(1.8rem,4vw,2.8rem); margin-bottom: 8px; line-height: 1.2; }
+    .profile-role { color: rgba(255,255,255,0.7); font-size: 17px; margin-bottom: 24px; line-height: 1.5; }
+    .interest-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 32px; }
+    .interest-tag { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.9); border-radius: 50px; padding: 5px 14px; font-size: 13px; }
+    .profile-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .profile-body { background: var(--cream); }
+    .profile-inner { max-width: 800px; margin: 0 auto; padding: 72px 40px 96px; }
+    .profile-section { margin-bottom: 48px; }
+    .profile-section h2 { font-family: 'Playfair Display', serif; color: var(--deep); font-size: 1.4rem; margin-bottom: 16px; padding-bottom: 10px; border-bottom: 2px solid var(--sage-light); }
+    .profile-section p { color: var(--muted); line-height: 1.85; font-size: 16.5px; margin-bottom: 16px; }
+    .session-info-box { background: var(--sage-light); border-radius: 16px; padding: 28px 32px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .session-info-item .label { font-size: 12px; font-weight: 600; color: var(--sage); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 4px; }
+    .session-info-item .value { color: var(--deep); font-size: 15px; line-height: 1.5; }
+    .rebate-note { margin-top: 16px; padding: 14px 20px; background: white; border-radius: 10px; font-size: 14px; color:var(--sage); }
+    .profile-cta { background: var(--deep); border-radius: 20px; padding: 44px; text-align: center; margin-top: 64px; }
+    .profile-cta h3 { font-family: 'Playfair Display', serif; color: white; font-size: 1.6rem; margin-bottom: 12px; }
+    .profile-cta p { color: rgba(255,255,255,0.7); margin-bottom: 28px; }
+    /* Scroll-to-top bubble */
+    .scroll-top-btn { position: fixed; bottom: 32px; right: 32px; z-index: 999; width: 48px; height: 48px; border-radius: 50%; background: var(--sage); color: white; border: none; font-size: 20px; cursor: pointer; box-shadow: 0 4px 20px rgba(44,62,53,0.25); display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity 0.3s, transform 0.3s; }
+    .scroll-top-btn.visible { opacity: 1; pointer-events: auto; }
+    .scroll-top-btn:hover { background: var(--deep); transform: translateY(-3px); }
+    @media (max-width: 768px) {
+      .profile-hero { padding: 100px 24px 48px; }
+      .profile-hero-inner { flex-direction: column; gap: 28px; }
+      .profile-photo { width: 160px; height: 190px; }
+      .profile-inner { padding: 48px 24px 72px; }
+      .session-info-box { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="../index.html" class="nav-logo">The Mood & <span>Mind</span> Centre</a>
+        <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../index.html#services">Services</a></li>
+      <li><a href="../index.html#team">Our Team</a></li>
+      <li><a href="../join-our-team.html">Join Our Team</a></li>
+      <li><a href="../fees.html">Fees</a></li>
+      <li><a href="../faq.html">FAQ</a></li>
+      <li><a href="../blog.html">Blog</a></li>
+    </ul>
+    <a href="https://clientportal.zandahealth.com/clientportal/hzyb6/home" target="_blank" rel="noopener" class="nav-cta">Book a Session</a>
+  </nav>
+
+  <div class="profile-hero">
+    <div class="profile-hero-inner">
+      <div class="profile-photo">
+        <img src="../images/team/jessica-parker.jpg" alt="Jessica Parker" />
+      </div>
+      <div class="profile-hero-text">
+        <div class="section-label"><a href="../index.html#team" style="color:var(--sage-mid);text-decoration:none;">Our Team</a></div>
+        <h1>Jessica Parker</h1>
+        <div class="profile-role">Senior Registered Psychologist, Clinical Team Leader & Board Approved Supervisor</div>
+        <div class="interest-tags"><span class="interest-tag">Anxiety & Depression</span><span class="interest-tag">Trauma</span><span class="interest-tag">Neurodivergence</span><span class="interest-tag">Identity & Self-Esteem</span><span class="interest-tag">Stress Management</span></div>
+        <div class="profile-actions">
+          <a href="https://clientportal.zandahealth.com/clientportal/hzyb6/home" target="_blank" rel="noopener" class="btn-primary">Book with Jessica</a>
+          <a href="tel:0755732200" class="btn-ghost" style="color:white;border-color:rgba(255,255,255,0.3);">📞 Call us</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="profile-body">
+  <div class="profile-inner">
+
+    <div class="profile-section">
+      <h2>About Jessica</h2>
+      <p>Jessica is a Senior Registered Psychologist who serves as the Clinical Team Leader at The Mood & Mind Centre. She provides clinical leadership and supervision to the team while maintaining an active caseload. Jessica is also the handler of Kylo, the practice's therapy dog, who joins her on Thursdays and Fridays at Upper Coomera.</p>
+    </div>
+
+    <div class="profile-section">
+      <h2>Therapeutic Approach</h2>
+      <p>Jessica works from a trauma-informed, strengths-based framework, integrating CBT, ACT, and neurodivergence-affirming approaches across her work.</p>
+    </div>
+
+    <div class="profile-section">
+      <h2>Session Information</h2>
+      <div class="session-info-box">
+        <div class="session-info-item">
+          <div class="label">Session Length</div>
+          <div class="value">50 minutes (standard session)</div>
+        </div>
+        <div class="session-info-item">
+          <div class="label">Locations</div>
+          <div class="value">Hope Island · Upper Coomera · Telehealth</div>
+        </div>
+        <div class="session-info-item">
+          <div class="label">Availability</div>
+          <div class="value">Please contact reception to discuss current availability.</div>
+        </div>
+        <div class="session-info-item">
+          <div class="label">Booking</div>
+          <div class="value">Online portal or call 07 5573 2200</div>
+        </div>
+      </div>
+      <div class="rebate-note">Medicare rebates available with a GP Mental Health Care Plan (up to 10 sessions per calendar year).</div>
+    </div>
+
+    <div class="profile-cta">
+      <h3>Ready to book with Jessica?</h3>
+      <p>Use our online booking portal or call us to check availability and schedule your first session.</p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+        <a href="https://clientportal.zandahealth.com/clientportal/hzyb6/home" target="_blank" rel="noopener" class="btn-primary">Book Online</a>
+        <a href="tel:0755732200" class="btn-ghost" style="color:white;border-color:rgba(255,255,255,0.3);">📞 07 5573 2200</a>
+      </div>
+    </div>
+
+  </div>
+  </div>
+
+  <footer id="contact">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo"><a href="../index.html" style="color:inherit;text-decoration:none;">The Mood & <span>Mind</span> Centre</a></div>
+        <p class="footer-about">A private psychology practice delivering evidence-based care with warmth and expertise. Serving the Gold Coast community across two convenient locations.</p>
+        <div class="footer-contact">
+          <div style="margin-bottom:8px">📞 <a href="tel:0755732200">07 5573 2200</a></div>
+          <div>✉ <a href="mailto:reception@moodandmindcentre.com">reception@moodandmindcentre.com</a></div>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="../services/individual-therapy.html">Individual Therapy</a></li>
+          <li><a href="../services/group-programs.html">Group Programs</a></li>
+          <li><a href="../services/telehealth.html">Telehealth</a></li>
+          <li><a href="../services/assessments.html">Assessments</a></li>
+          <li><a href="../services/child-family.html">Child &amp; Family</a></li>
+          <li><a href="../services/couples-counselling.html">Couples Counselling</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Information</h4>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../index.html#team">Our Team</a></li>
+          <li><a href="../fees.html">Fees &amp; Rebates</a></li>
+          <li><a href="../faq.html">FAQ</a></li>
+          <li><a href="../join-our-team.html">Join Our Team</a></li>
+          <li><a href="../blog.html">Blog</a></li>
+          <li><a href="mailto:reception@moodandmindcentre.com">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Locations</h4>
+        <ul>
+          <li>Hope Island: Suite 8/8 Santa Barbara Rd</li>
+          <li>Upper Coomera: Gold Coast QLD</li>
+          <li><a href="../services/telehealth.html">Telehealth (Anywhere)</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 The Mood &amp; Mind Centre. All rights reserved.</span>
+      <span>Made by <a href="https://kwinnovations.com.au" target="_blank" rel="noopener" style="color:var(--sage-mid);">KW | Innovations</a> &nbsp;·&nbsp; <a href="../../admin/index.html" style="color:rgba(255,255,255,0.25);font-size:0.75rem;" title="Staff Login">Staff Login</a></span>
+    </div>
+  </footer>
+  <button class="scroll-top-btn" id="scrollTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">↑</button>
+  <script>window.addEventListener('scroll',function(){document.getElementById('scrollTopBtn').classList.toggle('visible',window.scrollY>400);});</script>
+  <script>
+    (function(){
+      var nav = document.querySelector('nav');
+      if(!nav) return;
+      function update(){ nav.classList.toggle('scrolled', window.scrollY > 10); }
+      window.addEventListener('scroll', update, {passive:true});
+      update();
+    })();
+  </script>
+</body>
+</html>

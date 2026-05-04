@@ -44,19 +44,23 @@
       .article-hero { padding: 100px 24px 48px; }
       .article-inner { padding: 52px 24px 72px; }
     }
+  
+    .article-hero-photo { width:100%; max-height:380px; overflow:hidden; }
+    .article-hero-photo img { width:100%; height:380px; object-fit:cover; object-position:center; display:block; }
+
   </style>
 </head>
 <body>
   <nav>
     <a href="../index.html" class="nav-logo">The Mood & <span>Mind</span> Centre</a>
-    <ul class="nav-links">
+        <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
       <li><a href="../index.html#services">Services</a></li>
       <li><a href="../index.html#team">Our Team</a></li>
       <li><a href="../join-our-team.html">Join Our Team</a></li>
       <li><a href="../fees.html">Fees</a></li>
       <li><a href="../faq.html">FAQ</a></li>
       <li><a href="../blog.html">Blog</a></li>
-      <li><a href="mailto:reception@moodandmindcentre.com">Contact</a></li>
     </ul>
     <a href="https://clientportal.zandahealth.com/clientportal/hzyb6/home" target="_blank" rel="noopener" class="nav-cta">Book a Session</a>
   </nav>
@@ -72,6 +76,7 @@
       </div>
     </div>
   </div>
+  <div class="article-hero-photo"><img src="../images/blog-therapy-room.jpg" alt="" loading="lazy" /></div>
 
   <div class="article-body-wrap">
   <div class="article-inner">
@@ -164,10 +169,19 @@
     </div>
     <div class="footer-bottom">
       <span>© 2026 The Mood &amp; Mind Centre. All rights reserved.</span>
-      <span>Made by <a href="https://kwinnovations.com.au" target="_blank" rel="noopener" style="color:var(--sage-mid);">KW | Innovations</a></span>
+      <span>Made by <a href="https://kwinnovations.com.au" target="_blank" rel="noopener" style="color:var(--sage-mid);">KW | Innovations</a> &nbsp;·&nbsp; <a href="../../admin/index.html" style="color:rgba(255,255,255,0.25);font-size:0.75rem;" title="Staff Login">Staff Login</a></span>
     </div>
   </footer>
   <button class="scroll-top-btn" id="scrollTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">↑</button>
   <script>window.addEventListener('scroll',function(){document.getElementById('scrollTopBtn').classList.toggle('visible',window.scrollY>400);});</script>
+  <script>
+    (function(){
+      var nav = document.querySelector('nav');
+      if(!nav) return;
+      function update(){ nav.classList.toggle('scrolled', window.scrollY > 10); }
+      window.addEventListener('scroll', update, {passive:true});
+      update();
+    })();
+  </script>
 </body>
 </html>

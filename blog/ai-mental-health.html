@@ -56,19 +56,23 @@
   .scroll-top-btn.visible { opacity: 1; pointer-events: auto; }
   .scroll-top-btn:hover { background: var(--deep); transform: translateY(-3px); }
 
+  
+    .article-hero-photo { width: 100%; max-height: 420px; overflow: hidden; }
+    .article-hero-photo img { width: 100%; height: 420px; object-fit: cover; object-position: center; display: block; }
+
   </style>
 </head>
 <body>
   <nav>
     <a href="../index.html" class="nav-logo">The Mood & <span>Mind</span> Centre</a>
-    <ul class="nav-links">
+        <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
       <li><a href="../index.html#services">Services</a></li>
       <li><a href="../index.html#team">Our Team</a></li>
       <li><a href="../join-our-team.html">Join Our Team</a></li>
       <li><a href="../fees.html">Fees</a></li>
       <li><a href="../faq.html">FAQ</a></li>
       <li><a href="../blog.html">Blog</a></li>
-      <li><a href="../index.html#contact">Contact</a></li>
     </ul>
     <a href="https://clientportal.zandahealth.com/clientportal/hzyb6/home" target="_blank" rel="noopener" class="nav-cta">Book a Session</a>
   </nav>
@@ -212,7 +216,7 @@
     </div>
     <div class="footer-bottom">
       <span>© 2026 The Mood &amp; Mind Centre. All rights reserved.</span>
-      <span class="footer-credit">Hope Island · Upper Coomera · Gold Coast QLD &nbsp;·&nbsp; Made by <a href="https://kwinnovations.com.au" target="_blank" rel="noopener" style="color:var(--sage-mid);">KW | Innovations</a></span>
+      <span class="footer-credit">Hope Island · Upper Coomera · Gold Coast QLD &nbsp;·&nbsp; Made by <a href="https://kwinnovations.com.au" target="_blank" rel="noopener" style="color:var(--sage-mid);">KW | Innovations</a> &nbsp;·&nbsp; <a href="../admin/index.html" style="color:rgba(255,255,255,0.25);font-size:0.75rem;" title="Staff Login">Staff Login</a></span>
     </div>
   </footer>
 
@@ -222,6 +226,15 @@
     window.addEventListener('scroll', function() {
       document.getElementById('scrollTopBtn').classList.toggle('visible', window.scrollY > 400);
     });
+  </script>
+  <script>
+    (function(){
+      var nav = document.querySelector('nav');
+      if(!nav) return;
+      function update(){ nav.classList.toggle('scrolled', window.scrollY > 10); }
+      window.addEventListener('scroll', update, {passive:true});
+      update();
+    })();
   </script>
 </body>
 </html>

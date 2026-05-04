@@ -284,95 +284,29 @@ function filterTeam(tag, btn) {
   const hc = document.querySelector('.hero-content');
   if (!pb || !hc) return;
 
-  // progress: 0 = heading invisible, 1 = heading fully centred
-  let progress = 0;
-  let unlocked = false;
-  let rafId    = null;
-
   function easeOutCubic(t) { return 1 - Math.pow(1 - t, 3); }
   function clamp(v, lo, hi) { return Math.min(Math.max(v, lo), hi); }
 
-  // ── Phase A: page locked at top — heading reveals on scroll intent ──
-  function renderA() {
-    const p  = easeOutCubic(clamp(progress, 0, 1));
-    const ty = 40 * (1 - p);                        // rises from +40px → 0
-    hc.style.opacity   = p.toFixed(3);
-    hc.style.transform = `translateY(${ty.toFixed(2)}px)`;
-    rafId = null;
-  }
-
-  function scheduleA() {
-    if (!rafId) rafId = requestAnimationFrame(renderA);
-  }
-
-  function advance(deltaY) {
-    progress = clamp(progress + deltaY / 400, 0, 1);
-    scheduleA();
-    if (progress >= 1) unlock();
-  }
-
-  function onWheel(e) {
-    if (unlocked) return;
-    if (window.scrollY > 1) {
-      unlock();
-      return;
-    }
-    if (e.deltaY <= 0) return;
-    e.preventDefault();
-    advance(e.deltaY);
-  }
-
-  let _ty = 0;
-  function onTouchStart(e) { _ty = e.touches[0].clientY; }
-  function onTouchMove(e) {
-    if (unlocked) return;
-    if (window.scrollY > 1) {
-      unlock();
-      return;
-    }
-    const dy = _ty - e.touches[0].clientY;
-    _ty = e.touches[0].clientY;
-    if (dy <= 0) return;
-    e.preventDefault();
-    advance(dy * 1.5);
-  }
-
-  // ── Phase B: unlocked — page-body slides in on normal scroll ──────
   let ticking = false;
-  function renderB() {
+  function render() {
     const s   = window.scrollY;
     const vh  = window.innerHeight;
     const pbP = easeOutCubic(clamp(s / (vh * 0.35), 0, 1));
+
+    hc.style.opacity = '1';
+    hc.style.transform = 'translateY(0px)';
     pb.style.transform    = `translateY(${(90 * (1 - pbP)).toFixed(2)}px) scale(${(0.985 + 0.015 * pbP).toFixed(4)})`;
     pb.style.borderRadius = `${(48 - 20 * pbP).toFixed(1)}px ${(48 - 20 * pbP).toFixed(1)}px 0 0`;
     ticking = false;
   }
 
-  function unlock() {
-    if (unlocked) return;
-    unlocked = true;
-    window.removeEventListener('wheel', onWheel);
-    window.removeEventListener('touchstart', onTouchStart);
-    window.removeEventListener('touchmove', onTouchMove);
-    // Snap heading to fully visible at bottom-left
-    hc.style.opacity   = '1';
-    hc.style.transform = 'translateY(0px)';
-    // Hand off to normal scroll for page-body animation
-    window.addEventListener('scroll', function () {
-      if (!ticking) { requestAnimationFrame(renderB); ticking = true; }
-    }, { passive: true });
-    renderB();
+  function onScroll() {
+    if (!ticking) {
+      requestAnimationFrame(render);
+      ticking = true;
+    }
   }
 
-  // Kick off Phase A only for fresh top-of-page visits.
-  if (window.scrollY > 1 || window.location.hash) {
-    progress = 1;
-    renderA();
-    unlock();
-  } else {
-    window.addEventListener('wheel',      onWheel,      { passive: false });
-    window.addEventListener('touchstart', onTouchStart, { passive: true  });
-    window.addEventListener('touchmove',  onTouchMove,  { passive: false });
-    renderA();
-  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  render();
 })();
